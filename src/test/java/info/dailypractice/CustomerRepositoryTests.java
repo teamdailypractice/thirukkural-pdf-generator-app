@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package com.example.accessingdatajpa;
+package info.dailypractice;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
+import info.dailypractice.dao.CustomerRepository;
+import info.dailypractice.entity.Customer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
