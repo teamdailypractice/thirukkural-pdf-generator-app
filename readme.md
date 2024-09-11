@@ -14,3 +14,12 @@
 
 * Running the project with sqlite dependency
 * Running Tests
+
+## Run commands
+
+* In spring cli, when running commands provide the path in unix format
+* Incorrect - windows format
+  * `generate-book-type-setting D:\git\spring-boot-learning\data-jpa-sqlite\data-in\data\book-settings.json`
+* correct - unix format
+  * `generate-book-type-setting D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/book-settings.json`
+  

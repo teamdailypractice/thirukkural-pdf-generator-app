@@ -16,24 +16,13 @@ public class Book {
 
     public Book() {
     }
+
     public List<BookPage> getBookPages() {
         if (bookPages.isEmpty()) {
             List<BookPage> thirukkuralPages = getThirukkuralPages();
             bookPages.addAll(thirukkuralPages);
         }
         return bookPages;
-    }
-
-    private BookPage getPage(String title) {
-        BookPage page = new BookPage();
-        page.setTitle(title);
-        for (int i = 0; i < 10; i++) {
-            ArrayList<String> contents = new ArrayList<>();
-            contents.add(String.valueOf(i));
-            contents.add("Line");
-            page.add(contents);
-        }
-        return page;
     }
 
     private List<BookPage> getThirukkuralPages() {
