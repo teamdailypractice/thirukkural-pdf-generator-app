@@ -1,6 +1,7 @@
 package info.dailypractice.pdf;
 
 import info.dailypractice.dto.ThirukkuralLabelDto;
+import info.dailypractice.entity.BookConfiguration;
 import info.dailypractice.entity.Thirukkural;
 import info.dailypractice.service.ThirukkuralService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +15,24 @@ public class Book {
     private ArrayList<BookPage> bookPages = new ArrayList<>();
     @Autowired
     private ThirukkuralService thirukkuralService;
+    private BookConfiguration bookConfiguration;
 
     public Book() {
     }
 
+    public BookConfiguration getBookConfiguration() {
+        return bookConfiguration;
+    }
+
+    public void setBookConfiguration(BookConfiguration bookConfiguration) {
+        this.bookConfiguration = bookConfiguration;
+    }
+
+    //Note: This is used in Freemarker template
     public List<BookPage> getBookPages() {
-        if (bookPages.isEmpty()) {
-            List<BookPage> thirukkuralPages = getThirukkuralPages();
-            bookPages.addAll(thirukkuralPages);
-        }
+        List<BookPage> thirukkuralPages = getThirukkuralPages();
+        bookPages.clear();
+        bookPages.addAll(thirukkuralPages);
         return bookPages;
     }
 
@@ -32,6 +42,7 @@ public class Book {
 //        10 Thirukkural Per page
         for (int i = 0; i < allThirukkural.size(); ) {
             BookPage page = new BookPage();
+            page.setBookConfiguration(this.getBookConfiguration());
 //            set page title
             page.setTitle(allThirukkural.get(i).getName_ta());
             int PER_PAGE_ITEM_COUNT = 10;

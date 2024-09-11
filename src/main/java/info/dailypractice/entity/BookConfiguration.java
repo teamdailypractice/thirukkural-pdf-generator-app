@@ -1,11 +1,20 @@
 package info.dailypractice.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class BookConfiguration {
 
+    @JsonProperty("bookName")
     private String bookName;
+    @JsonProperty("contentStructure")
+    private List<String> contentStructure;
+    @JsonProperty("templateFileAbsolutePath")
     private String templateFileAbsolutePath;
+    @JsonProperty("outputFileAbsolutePath")
     private String outputFileAbsolutePath;
 
     public BookConfiguration() {
@@ -17,6 +26,14 @@ public class BookConfiguration {
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
+    }
+
+    public List<String> getContentStructure() {
+        return contentStructure;
+    }
+
+    public void setContentStructure(List<String> contentStructure) {
+        this.contentStructure = contentStructure;
     }
 
     public String getTemplateFileAbsolutePath() {
@@ -35,10 +52,12 @@ public class BookConfiguration {
         this.outputFileAbsolutePath = outputFileAbsolutePath;
     }
 
+
     @Override
     public String toString() {
         return "BookConfiguration{" +
                 "bookName='" + bookName + '\'' +
+                ", contentStructure=" + contentStructure +
                 ", templateFileAbsolutePath='" + templateFileAbsolutePath + '\'' +
                 ", outputFileAbsolutePath='" + outputFileAbsolutePath + '\'' +
                 '}';

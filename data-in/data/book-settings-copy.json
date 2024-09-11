@@ -1,0 +1,23 @@
+[
+  {
+    "bookName": "thirukkural",
+    "contentStructure": [
+      "lineNumber",
+      "line1",
+      "line2"
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/book.ftl",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/thirukkural.typ"
+  },
+  {
+    "bookName": "thirukkural-with-muva-urai",
+    "contentStructure": [
+      "lineNumber",
+      "line1",
+      "line2",
+      "urai"
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/muva-urai/book.ftl",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/thirukkural-muva-urai.typ"
+  }
+]

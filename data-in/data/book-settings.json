@@ -1,6 +1,11 @@
 [
   {
     "bookName": "thirukkural",
+    "contentStructure": [
+      "lineNumber",
+      "line1",
+      "line2"
+    ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/book.ftl",
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/thirukkural.typ"
   }

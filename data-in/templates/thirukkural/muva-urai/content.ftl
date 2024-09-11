@@ -13,14 +13,15 @@
 = ${bookPage.getTitle()}
 \
 #set align(left)
+<#assign lineNumberContentMapList = bookPage.getLineNumberContentMapList()>
+<#list lineNumberContentMapList as lineNumberContentMap>
 #table(
   stroke: none,
   columns: (2cm, auto),
   [], [],
-  <#assign lineNumberContentMapList = bookPage.getLineNumberContentMapList()>
-  <#list lineNumberContentMapList as lineNumberContentMap>
-  [${lineNumberContentMap.lineNumber}], [${lineNumberContentMap.line1} \ ${lineNumberContentMap.line2} \ \ ],
-  </#list>
+  [${lineNumberContentMap.lineNumber}], [${lineNumberContentMap.a1} \ ${lineNumberContentMap.a2} \ ]
 )
+[${lineNumberContentMap.urai}]
+</#list>
 </#list>
 </#macro>

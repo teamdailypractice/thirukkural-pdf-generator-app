@@ -83,11 +83,11 @@ public class TypstFileGenerator {
             String information = MessageFormat.format("Processing template for: {0} -  Output File: {1}", bc.getBookName(), bc.getOutputFileAbsolutePath());
             System.out.println(information);
 
-//            List<BookPage> bookPages = book.getBookPages();
+
+            book.setBookConfiguration(bc);
             Map data = new HashMap();
-//            data.put("bc", bc);
             data.put("book", book);
-//            data.put("bookPages", bookPages);
+
             temp.process(data, outputStreamWriter);
         }
     }
