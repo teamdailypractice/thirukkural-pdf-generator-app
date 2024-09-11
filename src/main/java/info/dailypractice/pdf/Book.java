@@ -1,5 +1,6 @@
 package info.dailypractice.pdf;
 
+import info.dailypractice.dto.ThirukkuralLabelDto;
 import info.dailypractice.entity.Thirukkural;
 import info.dailypractice.service.ThirukkuralService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,18 +27,18 @@ public class Book {
     }
 
     private List<BookPage> getThirukkuralPages() {
-        List<Thirukkural> allThirukkural = thirukkuralService.findAll();
+        List<ThirukkuralLabelDto> allThirukkural = thirukkuralService.getAllThirukkuralWithLabel();
         ArrayList<BookPage> bookPages = new ArrayList<>();
 //        10 Thirukkural Per page
         for (int i = 0; i < allThirukkural.size(); ) {
             BookPage page = new BookPage();
 //            set page title
-            page.setTitle(String.valueOf(i + 1));
+            page.setTitle(allThirukkural.get(i).getName_ta());
             int PER_PAGE_ITEM_COUNT = 10;
             ArrayList<String> contents = new ArrayList<>();
             int j = i;
             for (; j < (i + PER_PAGE_ITEM_COUNT) && j < allThirukkural.size(); j++) {
-                Thirukkural thirukkural = allThirukkural.get(j);
+                ThirukkuralLabelDto thirukkural = allThirukkural.get(j);
 //              What is the content for 1 thirukkural?
                 contents.add(String.valueOf(thirukkural.getKural_id()));
                 contents.add(thirukkural.getLine1());

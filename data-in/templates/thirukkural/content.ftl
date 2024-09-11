@@ -1,6 +1,8 @@
 <#macro content>
 #set page(numbering: "1")
 #counter(page).update(1)
+#set heading(numbering: "1.")
+
 <#list book.getBookPages() as bookPage>
 #set page("a4")
 #set text(
