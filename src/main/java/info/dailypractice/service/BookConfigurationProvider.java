@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import info.dailypractice.entity.BookConfiguration;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -18,16 +19,16 @@ import java.util.stream.Collectors;
 
 @Service
 public class BookConfigurationProvider {
+    @Autowired
+    private ObjectMapper objectMapper;
 
     public List<BookConfiguration> getBookConfiguration(String dataFilepath) throws IOException {
         List<BookConfiguration> BookConfigurations = new ArrayList<>();
 
         String data = Files.readAllLines(Path.of(dataFilepath), StandardCharsets.UTF_8)
                 .stream().collect(Collectors.joining("\n"));
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.registerModule(new Jdk8Module());
         try {
-            List<BookConfiguration> pcs = mapper.readValue(data, new TypeReference<List<BookConfiguration>>() {
+            List<BookConfiguration> pcs = objectMapper.readValue(data, new TypeReference<List<BookConfiguration>>() {
             });
             BookConfigurations.addAll(pcs);
 
