@@ -38,7 +38,7 @@ public class Application {
 //                System.out.println(bookPage.getTitle());
 //                System.out.println(bookPage.getContents().size());
 //            }
-            String datafilePath = "D:\\git\\pdf-tools\\pdf-generator\\data-in\\data\\book-settings.json";
+            String datafilePath = "D:\\git\\spring-boot-learning\\data-jpa-sqlite\\data-in\\data\\book-settings.json";
             List<BookConfiguration> bookConfiguration = bookConfigurationProvider.getBookConfiguration(datafilePath);
 
             System.out.println(bookConfiguration);
