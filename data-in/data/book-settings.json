@@ -1,7 +1,7 @@
 [
   {
     "bookName": "thirukkural",
-    "templateFileAbsolutePath": "D:/git/pdf-tools/pdf-generator/data-in/templates/thirukkural/book.ftl",
-    "outputFileAbsolutePath": "D:/git/pdf-tools/pdf-generator/data-out/thirukkural.typ"
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/book.ftl",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/thirukkural.typ"
   }
 ]

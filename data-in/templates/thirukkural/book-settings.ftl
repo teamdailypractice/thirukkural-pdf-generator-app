@@ -4,5 +4,8 @@
   font: "TSCu_SaiIndira",
   size: 12pt
 )
-#outline()
+#set page(numbering: "(i)")
+#outline(
+  title: "திருக்குறள் அதிகாரங்கள்"
+)
 </#macro>

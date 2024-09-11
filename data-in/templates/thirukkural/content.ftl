@@ -1,12 +1,14 @@
 <#macro content>
+#set page(numbering: "1")
+#counter(page).update(1)
 <#list book.getBookPages() as bookPage>
 #set page("a4")
 #set text(
   font: "TSCu_SaiIndira",
-  size: 13pt
+  size: 12pt
 )
 #set align(center)
-= ${bookPage?index + 1}    ${bookPage.getTitle()}
+= ${bookPage.getTitle()}
 \
 #set align(left)
 #table(
