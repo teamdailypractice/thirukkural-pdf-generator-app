@@ -11,9 +11,9 @@ import java.util.Map;
 
 public class BookPage {
     private String title;
-    private ArrayList<ArrayList<String>> contents = new ArrayList<>();
-    private ArrayList<Map<String, String>> lineNumberContentMapList = new ArrayList<>();
+    private ArrayList<Map<String, String>> thirukkuralAttributeValueMapList = new ArrayList<>();
     private BookConfiguration bookConfiguration;
+
     public BookPage() {
     }
 
@@ -25,24 +25,9 @@ public class BookPage {
         this.bookConfiguration = bookConfiguration;
     }
 
-    public void addThirukkural(List<String> lines) {
-        contents.add(new ArrayList<>(lines));
-        List<String> contentStructure = bookConfiguration.getContentStructure();
-        int LINES_PER_ITEM = contentStructure.size();
-        for (int i = 0; i < lines.size(); ) {
-            Map<String, String> lineNumberContentMap = new HashMap<>();
-            for (int j = 0; j < LINES_PER_ITEM; j++) {
-                lineNumberContentMap.put(contentStructure.get(j), lines.get(i + j));
-            }
-            add(lineNumberContentMap);
-            i = i + LINES_PER_ITEM;
-        }
+    public void add(Map<String, String> thirukkuralAttributeValueMap) {
+        thirukkuralAttributeValueMapList.add(thirukkuralAttributeValueMap);
     }
-
-    private void add(Map<String, String> lineNumberContentMap) {
-        lineNumberContentMapList.add(lineNumberContentMap);
-    }
-
 
     public String getTitle() {
         return title;
@@ -52,12 +37,9 @@ public class BookPage {
         this.title = title;
     }
 
-    public ArrayList<ArrayList<String>> getContents() {
-        return contents;
-    }
-
-    public List<Map<String, String>> getLineNumberContentMapList() {
-        return lineNumberContentMapList;
+    //    Note: Used in Freemarket Template - content.ftl file
+    public List<Map<String, String>> getThirukkuralAttributeValueMapList() {
+        return thirukkuralAttributeValueMapList;
     }
 
 }

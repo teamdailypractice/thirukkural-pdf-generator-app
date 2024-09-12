@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -46,16 +47,17 @@ public class Book {
 //            set page title
             page.setTitle(allThirukkural.get(i).getName_ta());
             int PER_PAGE_ITEM_COUNT = 10;
-            ArrayList<String> contents = new ArrayList<>();
+
             int j = i;
             for (; j < (i + PER_PAGE_ITEM_COUNT) && j < allThirukkural.size(); j++) {
+                HashMap<String, String> thirukkuralAttributeValueMap = new HashMap<>();
                 ThirukkuralLabelDto thirukkural = allThirukkural.get(j);
 //              What is the content for 1 thirukkural?
-                contents.add(String.valueOf(thirukkural.getKural_id()));
-                contents.add(thirukkural.getLine1());
-                contents.add(thirukkural.getLine2());
+                thirukkuralAttributeValueMap.put("lineNumber",String.valueOf(thirukkural.getKural_id()));
+                thirukkuralAttributeValueMap.put("line1",String.valueOf(thirukkural.getLine1()));
+                thirukkuralAttributeValueMap.put("line2",String.valueOf(thirukkural.getLine2()));
+                page.add(thirukkuralAttributeValueMap);
             }
-            page.addThirukkural(contents);
             bookPages.add(page);
             i = j;
         }

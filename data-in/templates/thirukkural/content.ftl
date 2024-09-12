@@ -15,11 +15,11 @@
 #set align(left)
 #table(
   stroke: none,
-  columns: (2cm, auto),
+  columns: (1.5cm, auto),
   [], [],
-  <#assign lineNumberContentMapList = bookPage.getLineNumberContentMapList()>
-  <#list lineNumberContentMapList as lineNumberContentMap>
-  [${lineNumberContentMap.lineNumber}], [${lineNumberContentMap.line1} \ ${lineNumberContentMap.line2} \ \ ],
+  <#assign thirukkuralAttributeValueMapList = bookPage.getThirukkuralAttributeValueMapList()>
+  <#list thirukkuralAttributeValueMapList as thirukkuralAttributeValueMap>
+  [${thirukkuralAttributeValueMap.lineNumber}], [${thirukkuralAttributeValueMap.line1} \ ${thirukkuralAttributeValueMap.line2} \ \ ],
   </#list>
 )
 </#list>
