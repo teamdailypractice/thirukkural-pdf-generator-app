@@ -22,7 +22,12 @@
   [${thirukkuralAttributeValueMap.lineNumber}], [${thirukkuralAttributeValueMap.line1} \ ${thirukkuralAttributeValueMap.line2} \ ]
 )
 ${thirukkuralAttributeValueMap.urai_1}
-</#list>
+<#assign currentKuralNumber = thirukkuralAttributeValueMap.lineNumber?number>
+<#if currentKuralNumber % 5 == 0 && currentKuralNumber != 1330>
 #pagebreak()
+</#if>
+
+</#list>
+
 </#list>
 </#macro>
