@@ -56,6 +56,7 @@ public class Book {
                 thirukkuralAttributeValueMap.put("lineNumber",String.valueOf(thirukkural.getKural_id()));
                 thirukkuralAttributeValueMap.put("line1",String.valueOf(thirukkural.getLine1()));
                 thirukkuralAttributeValueMap.put("line2",String.valueOf(thirukkural.getLine2()));
+                thirukkuralAttributeValueMap.put("urai_1",String.valueOf(thirukkural.getUrai_1()));
                 page.add(thirukkuralAttributeValueMap);
             }
             bookPages.add(page);

@@ -21,22 +21,8 @@
   [], [],
   [${thirukkuralAttributeValueMap.lineNumber}], [${thirukkuralAttributeValueMap.line1} \ ${thirukkuralAttributeValueMap.line2} \ ]
 )
+${thirukkuralAttributeValueMap.urai_1}
 </#list>
 #pagebreak()
-#set text(
-  font: "TSCu_SaiIndira",
-  size: 10.6pt
-)
-<#assign spaces=".  ">
-<#assign lineNumber=".  ">
-<#list thirukkuralAttributeValueMapList as thirukkuralAttributeValueMap>
-${thirukkuralAttributeValueMap.lineNumber}${spaces}${thirukkuralAttributeValueMap.urai_1}
-<#assign lineNumber=thirukkuralAttributeValueMap.lineNumber>
-\
-</#list>
-<#if lineNumber != "1330">
-    #pagebreak()
-</#if>
-
 </#list>
 </#macro>

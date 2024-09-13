@@ -9,6 +9,18 @@ public class ThirukkuralLabelDto {
     private String line2;
     private int group_id;
     private String name_ta;
+    private String author_name_1;
+    private String urai_1;
+
+    public ThirukkuralLabelDto(int kural_id, String line1, String line2, int group_id, String name_ta, String author_name_1, String urai_1) {
+        this.kural_id = kural_id;
+        this.line1 = line1;
+        this.line2 = line2;
+        this.group_id = group_id;
+        this.name_ta = name_ta;
+        this.author_name_1 = author_name_1;
+        this.urai_1 = urai_1;
+    }
 
     public ThirukkuralLabelDto(int kural_id, String line1, String line2, int group_id, String name_ta) {
         this.kural_id = kural_id;
@@ -58,6 +70,22 @@ public class ThirukkuralLabelDto {
         this.name_ta = name_ta;
     }
 
+    public String getAuthor_name_1() {
+        return author_name_1;
+    }
+
+    public void setAuthor_name_1(String author_name_1) {
+        this.author_name_1 = author_name_1;
+    }
+
+    public String getUrai_1() {
+        return urai_1;
+    }
+
+    public void setUrai_1(String urai_1) {
+        this.urai_1 = urai_1;
+    }
+
     @Override
     public String toString() {
         return "ThirukkuralLabelDto{" +
@@ -66,6 +94,8 @@ public class ThirukkuralLabelDto {
                 ", line2='" + line2 + '\'' +
                 ", group_id=" + group_id +
                 ", name_ta='" + name_ta + '\'' +
+                ", author_name_1='" + author_name_1 + '\'' +
+                ", urai_1='" + urai_1 + '\'' +
                 '}';
     }
 
