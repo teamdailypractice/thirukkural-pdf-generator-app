@@ -28,8 +28,8 @@ public class ThirukkuralService {
 
     }
     //getAllThirukkuralWithLabel
-    public List<ThirukkuralLabelDto> getAllThirukkuralWithLabel() {
-        return (List<ThirukkuralLabelDto>) this.thirukkuralRepositoryCustom.getThirukkuralLabelMapping();
+    public List<ThirukkuralLabelDto> getAllThirukkuralWithLabel(int authorId) {
+        return (List<ThirukkuralLabelDto>) this.thirukkuralRepositoryCustom.getThirukkuralLabelMapping(authorId);
     }
 }
 

@@ -8,6 +8,7 @@ import jakarta.persistence.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.text.MessageFormat;
 import java.util.List;
 
 @Repository
@@ -15,7 +16,7 @@ public class ThirukkuralRepositoryCustom {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List<ThirukkuralLabelDto> getThirukkuralLabelMapping() {
+    public List<ThirukkuralLabelDto> getThirukkuralLabelMapping(int authorId) {
         String sql = """
                 SELECT
                             a.kural_id,
@@ -35,10 +36,11 @@ public class ThirukkuralRepositoryCustom {
                             JOIN author e
                             ON d.author_id = e.id
                             WHERE c.is_primary = 1
-                            AND e.id = 1
+                            AND e.id = {0}
                             ORDER by a.kural_id
                 """;
-        Query query = entityManager.createNativeQuery(sql, ThirukkuralLabelDto.class);
+        String finalQuery = MessageFormat.format(sql, authorId);
+        Query query = entityManager.createNativeQuery(finalQuery, ThirukkuralLabelDto.class);
         List<ThirukkuralLabelDto> resultList = query.getResultList();
         return resultList;
     }

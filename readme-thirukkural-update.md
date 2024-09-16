@@ -14,4 +14,9 @@ SET urai = REPLACE(urai, '`','‘')
 where author_id = 1 and urai like '%`%'
 ```
 * Run and verify
-* 
+
+
+## Update 2: author id: 2 
+
+useless characters: @@@@@@ kural id: 416
+Bakctick not closed - kural id : 2

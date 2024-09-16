@@ -10,6 +10,8 @@ public class BookConfiguration {
 
     @JsonProperty("bookName")
     private String bookName;
+    @JsonProperty("authorId")
+    private int authorId;
     @JsonProperty("contentStructure")
     private List<String> contentStructure;
     @JsonProperty("templateFileAbsolutePath")
@@ -26,6 +28,14 @@ public class BookConfiguration {
 
     public void setBookName(String bookName) {
         this.bookName = bookName;
+    }
+
+    public int getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(int authorId) {
+        this.authorId = authorId;
     }
 
     public List<String> getContentStructure() {
@@ -57,6 +67,7 @@ public class BookConfiguration {
     public String toString() {
         return "BookConfiguration{" +
                 "bookName='" + bookName + '\'' +
+                ", authorId=" + authorId +
                 ", contentStructure=" + contentStructure +
                 ", templateFileAbsolutePath='" + templateFileAbsolutePath + '\'' +
                 ", outputFileAbsolutePath='" + outputFileAbsolutePath + '\'' +
@@ -68,11 +79,11 @@ public class BookConfiguration {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         BookConfiguration that = (BookConfiguration) o;
-        return Objects.equals(bookName, that.bookName) && Objects.equals(templateFileAbsolutePath, that.templateFileAbsolutePath) && Objects.equals(outputFileAbsolutePath, that.outputFileAbsolutePath);
+        return authorId == that.authorId && Objects.equals(bookName, that.bookName) && Objects.equals(templateFileAbsolutePath, that.templateFileAbsolutePath) && Objects.equals(outputFileAbsolutePath, that.outputFileAbsolutePath);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookName, templateFileAbsolutePath, outputFileAbsolutePath);
+        return Objects.hash(bookName, authorId, templateFileAbsolutePath, outputFileAbsolutePath);
     }
 }
