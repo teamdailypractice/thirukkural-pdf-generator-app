@@ -40,5 +40,33 @@
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/muva-urai/book2.ftl",
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/muva-urai-format2.typ"
+  },
+  {
+    "bookName": "muka-urai-format1",
+    "authorId": 1,
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "contentStructure": [
+      "lineNumber",
+      "line1",
+      "line2",
+      "urai_1"
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/muka-urai/book1.ftl",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/muka-urai-format1.typ"
+  },
+  {
+    "bookName": "muka-urai-format2",
+    "authorId": 1,
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "contentStructure": [
+      "lineNumber",
+      "line1",
+      "line2",
+      "urai_1"
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/muka-urai/book2.ftl",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/muka-urai-format2.typ"
   }
 ]
