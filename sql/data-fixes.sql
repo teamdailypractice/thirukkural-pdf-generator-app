@@ -26,3 +26,15 @@ UPDATE thirukkural_author_urai
 SET urai = REPLACE(urai,'`','')
 WHERE author_id = 2
 and urai like '%`%'
+
+--author_id = 4 -- data fixes applied
+SELECT *
+FROM
+thirukkural_author_urai
+WHERE author_id = 4
+and urai like '%*%'
+
+UPDATE thirukkural_author_urai
+SET urai = REPLACE(urai,'*','')
+WHERE author_id = 4
+and urai like '%*%'
