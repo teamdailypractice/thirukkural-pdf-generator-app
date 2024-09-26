@@ -47,8 +47,10 @@ public class Book {
         for (int i = 0; i < allThirukkural.size(); ) {
             BookPage page = new BookPage();
             page.setBookConfiguration(this.getBookConfiguration());
+
 //            set page title
             page.setTitle(allThirukkural.get(i).getName_ta());
+            page.setGroupId(allThirukkural.get(i).getGroup_id());
             int PER_PAGE_ITEM_COUNT = 10;
 
             int j = i;

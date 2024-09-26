@@ -11,6 +11,7 @@ import java.util.Map;
 
 public class BookPage {
     private String title;
+    private int groupId;
     private ArrayList<Map<String, String>> thirukkuralAttributeValueMapList = new ArrayList<>();
     private BookConfiguration bookConfiguration;
 
@@ -35,6 +36,23 @@ public class BookPage {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
+    }
+
+    @Override
+    public String toString() {
+        return "BookPage{" +
+                "title='" + title + '\'' +
+                ", groupId=" + groupId +
+                ", bookConfiguration=" + bookConfiguration +
+                '}';
     }
 
     //    Note: Used in Freemarket Template - content.ftl file
