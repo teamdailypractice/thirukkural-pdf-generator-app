@@ -43,7 +43,7 @@
   },
   {
     "bookName": "muka-urai-format1",
-    "authorId": 1,
+    "authorId": 6,
     "firstKuralId": 1,
     "lastKuralId": 1080,
     "contentStructure": [
@@ -57,7 +57,7 @@
   },
   {
     "bookName": "muka-urai-format2",
-    "authorId": 1,
+    "authorId": 6,
     "firstKuralId": 1,
     "lastKuralId": 1080,
     "contentStructure": [
@@ -68,5 +68,33 @@
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/muka-urai/book2.ftl",
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/muka-urai-format2.typ"
+  },
+  {
+    "bookName": "maku-urai-format1",
+    "authorId": 2,
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "contentStructure": [
+      "lineNumber",
+      "line1",
+      "line2",
+      "urai_1"
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/maku-urai/book1.ftl",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/maku-urai-format1.typ"
+  },
+  {
+    "bookName": "maku-urai-format2",
+    "authorId": 2,
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "contentStructure": [
+      "lineNumber",
+      "line1",
+      "line2",
+      "urai_1"
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/maku-urai/book2.ftl",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/maku-urai-format2.typ"
   }
 ]
