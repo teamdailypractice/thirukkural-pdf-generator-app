@@ -1,7 +1,7 @@
 <#macro content>
 #set page(numbering: "1")
 #counter(page).update(1)
-#set heading(numbering: "1.")
+#set heading(numbering: none)
 
 <#assign lastKuralId = book.getBookConfiguration().getLastKuralId()>
 <#list book.getBookPages() as bookPage>
@@ -11,7 +11,8 @@
   size: 12pt
 )
 #set align(center)
-= ${bookPage.getTitle()}
+<#assign separator = ".  ">
+= ${bookPage.getGroupId()}${separator}${bookPage.getTitle()}
 \
 #set align(left)
 <#assign thirukkuralAttributeValueMapList = bookPage.getThirukkuralAttributeValueMapList()>
