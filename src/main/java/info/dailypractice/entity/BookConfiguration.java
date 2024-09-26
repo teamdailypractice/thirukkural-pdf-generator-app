@@ -12,6 +12,10 @@ public class BookConfiguration {
     private String bookName;
     @JsonProperty("authorId")
     private int authorId;
+    @JsonProperty("firstKuralId")
+    private int firstKuralId;
+    @JsonProperty("lastKuralId")
+    private int lastKuralId;
     @JsonProperty("contentStructure")
     private List<String> contentStructure;
     @JsonProperty("templateFileAbsolutePath")
@@ -38,6 +42,22 @@ public class BookConfiguration {
         this.authorId = authorId;
     }
 
+    public int getFirstKuralId() {
+        return firstKuralId;
+    }
+
+    public void setFirstKuralId(int firstKuralId) {
+        this.firstKuralId = firstKuralId;
+    }
+
+    public int getLastKuralId() {
+        return lastKuralId;
+    }
+
+    public void setLastKuralId(int lastKuralId) {
+        this.lastKuralId = lastKuralId;
+    }
+
     public List<String> getContentStructure() {
         return contentStructure;
     }
@@ -62,12 +82,13 @@ public class BookConfiguration {
         this.outputFileAbsolutePath = outputFileAbsolutePath;
     }
 
-
     @Override
     public String toString() {
         return "BookConfiguration{" +
                 "bookName='" + bookName + '\'' +
                 ", authorId=" + authorId +
+                ", firstKuralId=" + firstKuralId +
+                ", lastKuralId=" + lastKuralId +
                 ", contentStructure=" + contentStructure +
                 ", templateFileAbsolutePath='" + templateFileAbsolutePath + '\'' +
                 ", outputFileAbsolutePath='" + outputFileAbsolutePath + '\'' +

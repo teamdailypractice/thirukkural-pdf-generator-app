@@ -31,5 +31,10 @@ public class ThirukkuralService {
     public List<ThirukkuralLabelDto> getAllThirukkuralWithLabel(int authorId) {
         return (List<ThirukkuralLabelDto>) this.thirukkuralRepositoryCustom.getThirukkuralLabelMapping(authorId);
     }
+
+    //getAllThirukkuralWithLabel
+    public List<ThirukkuralLabelDto> getAllThirukkuralWithLabel(int authorId, int firstKuralId, int lastKuralId) {
+        return (List<ThirukkuralLabelDto>) this.thirukkuralRepositoryCustom.getThirukkuralLabelMapping(authorId,firstKuralId,lastKuralId);
+    }
 }
 

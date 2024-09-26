@@ -3,6 +3,7 @@
 #counter(page).update(1)
 #set heading(numbering: "1.")
 
+<#assign lastKuralId = book.getBookConfiguration().getLastKuralId()>
 <#list book.getBookPages() as bookPage>
 #set page("a4")
 #set text(
@@ -23,7 +24,7 @@
 )
 ${thirukkuralAttributeValueMap.urai_1}
 <#assign currentKuralNumber = thirukkuralAttributeValueMap.lineNumber?number>
-<#if currentKuralNumber % 5 == 0 && currentKuralNumber != 1330>
+<#if currentKuralNumber % 5 == 0 && currentKuralNumber != lastKuralId>
 #pagebreak()
 </#if>
 

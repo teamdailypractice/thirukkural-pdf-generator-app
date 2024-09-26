@@ -1,7 +1,9 @@
 [
   {
     "bookName": "thirukkural-with-muva-urai",
-    "authorId": 2,
+    "authorId": 1,
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
     "contentStructure": [
       "lineNumber",
       "line1",

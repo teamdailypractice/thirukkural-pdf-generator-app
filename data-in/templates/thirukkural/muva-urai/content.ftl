@@ -3,6 +3,7 @@
 #counter(page).update(1)
 #set heading(numbering: "1.")
 
+<#assign lastKuralId = book.getBookConfiguration().getLastKuralId()?c>
 <#list book.getBookPages() as bookPage>
 #set page("a4")
 #set text(
@@ -34,7 +35,7 @@ ${thirukkuralAttributeValueMap.lineNumber}${spaces}${thirukkuralAttributeValueMa
 <#assign lineNumber=thirukkuralAttributeValueMap.lineNumber>
 \
 </#list>
-<#if lineNumber != "1330">
+<#if lineNumber != lastKuralId>
     #pagebreak()
 </#if>
 

@@ -38,7 +38,10 @@ public class Book {
     }
 
     private List<BookPage> getThirukkuralPages() {
-        List<ThirukkuralLabelDto> allThirukkural = thirukkuralService.getAllThirukkuralWithLabel(this.getBookConfiguration().getAuthorId());
+        List<ThirukkuralLabelDto> allThirukkural = thirukkuralService
+                .getAllThirukkuralWithLabel(getBookConfiguration().getAuthorId(),
+                        getBookConfiguration().getFirstKuralId(),
+                        getBookConfiguration().getLastKuralId());
         ArrayList<BookPage> bookPages = new ArrayList<>();
 //        10 Thirukkural Per page
         for (int i = 0; i < allThirukkural.size(); ) {
