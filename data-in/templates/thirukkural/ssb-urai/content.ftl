@@ -26,15 +26,21 @@
 </#list>
 #pagebreak()
 #set text(
-  font: "TSCu_SaiIndira",
-  size: 10.6pt
+  font: "JetBrains Mono",
+  size: 13.0pt
 )
 <#assign spaces=".  ">
 <#assign lineNumber=".  ">
 <#list thirukkuralAttributeValueMapList as thirukkuralAttributeValueMap>
-${thirukkuralAttributeValueMap.lineNumber}${spaces}${thirukkuralAttributeValueMap.urai_1}
+<#assign uraiLines=thirukkuralAttributeValueMap.urai_1?split("\n")>
+#table(
+  stroke: none,
+  columns: (1.4cm, auto),
+  [], [],
+  [${thirukkuralAttributeValueMap.lineNumber}], [${uraiLines[0]} \ ${uraiLines[1]} \ ]
+)
 <#assign lineNumber=thirukkuralAttributeValueMap.lineNumber>
-\
+
 </#list>
 <#if lineNumber != lastKuralId>
     #pagebreak()
