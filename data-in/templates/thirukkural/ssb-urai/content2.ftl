@@ -14,10 +14,19 @@
 <#assign separator = ".  ">
 = ${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
 \
+<#assign currentGroupId = bookPage.getGroupId()?number>
+<#if currentGroupId == 26 || currentGroupId == 64>
 #set text(
   font: "JetBrains Mono",
-  size: 12.0pt
+  size: 11.0pt
 )
+<#else>
+#set text(
+  font: "JetBrains Mono",
+  size: 12.1pt
+)
+</#if>
+
 ${bookPage.getGroupId()}${separator}${bookPage.getTitleInEnglish()}
 \
 #set align(left)

@@ -126,6 +126,20 @@
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/ssb-urai-format2.typ"
   },
   {
+    "bookName": "ssb-urai-format3",
+    "authorId": 4,
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "contentStructure": [
+      "lineNumber",
+      "line1",
+      "line2",
+      "urai_1"
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/ssb-urai/book3.ftl",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/ssb-urai-format3.typ"
+  },
+  {
     "bookName": "pope-urai-format1",
     "authorId": 5,
     "firstKuralId": 1,
