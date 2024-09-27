@@ -7,7 +7,7 @@
   size: 13pt
 )
 #set align(center)
-= ${bookPage?index + 1}    ${bookPage.getTitle()}
+= ${bookPage?index + 1}    ${bookPage.getTitleInTamil()}
 \
 #set align(left)
 #table(

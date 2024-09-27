@@ -2,7 +2,6 @@ package info.dailypractice.pdf;
 
 import info.dailypractice.dto.ThirukkuralLabelDto;
 import info.dailypractice.entity.BookConfiguration;
-import info.dailypractice.entity.Thirukkural;
 import info.dailypractice.service.ThirukkuralService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,7 +48,8 @@ public class Book {
             page.setBookConfiguration(this.getBookConfiguration());
 
 //            set page title
-            page.setTitle(allThirukkural.get(i).getName_ta());
+            page.setTitleInTamil(allThirukkural.get(i).getName_ta());
+            page.setTitleInEnglish(allThirukkural.get(i).getName_en());
             page.setGroupId(allThirukkural.get(i).getGroup_id());
             int PER_PAGE_ITEM_COUNT = 10;
 

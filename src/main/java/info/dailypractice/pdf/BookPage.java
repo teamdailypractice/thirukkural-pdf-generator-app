@@ -1,16 +1,15 @@
 package info.dailypractice.pdf;
 
 import info.dailypractice.entity.BookConfiguration;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 
 public class BookPage {
-    private String title;
+    private String titleInTamil;
+    private String titleInEnglish;
     private int groupId;
     private ArrayList<Map<String, String>> thirukkuralAttributeValueMapList = new ArrayList<>();
     private BookConfiguration bookConfiguration;
@@ -30,12 +29,20 @@ public class BookPage {
         thirukkuralAttributeValueMapList.add(thirukkuralAttributeValueMap);
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitleInTamil() {
+        return titleInTamil;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitleInTamil(String titleInTamil) {
+        this.titleInTamil = titleInTamil;
+    }
+
+    public String getTitleInEnglish() {
+        return titleInEnglish;
+    }
+
+    public void setTitleInEnglish(String titleInEnglish) {
+        this.titleInEnglish = titleInEnglish;
     }
 
     public int getGroupId() {
@@ -49,7 +56,8 @@ public class BookPage {
     @Override
     public String toString() {
         return "BookPage{" +
-                "title='" + title + '\'' +
+                "titleInTamil='" + titleInTamil + '\'' +
+                ", titleInEnglish='" + titleInEnglish + '\'' +
                 ", groupId=" + groupId +
                 ", bookConfiguration=" + bookConfiguration +
                 '}';

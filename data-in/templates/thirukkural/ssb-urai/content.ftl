@@ -12,7 +12,7 @@
 )
 #set align(center)
 <#assign separator = ".  ">
-= ${bookPage.getGroupId()}${separator}${bookPage.getTitle()}
+= ${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
 \
 #set align(left)
 <#assign thirukkuralAttributeValueMapList = bookPage.getThirukkuralAttributeValueMapList()>
@@ -27,15 +27,24 @@
 #pagebreak()
 #set text(
   font: "JetBrains Mono",
-  size: 13.0pt
+  size: 15.0pt
 )
+#set align(center)
+<#assign separator = ".  ">
+= ${bookPage.getGroupId()}${separator}${bookPage.getTitleInEnglish()}
+\
+#set text(
+  font: "JetBrains Mono",
+  size: 13.6pt
+)
+#set align(left)
 <#assign spaces=".  ">
 <#assign lineNumber=".  ">
 <#list thirukkuralAttributeValueMapList as thirukkuralAttributeValueMap>
 <#assign uraiLines=thirukkuralAttributeValueMap.urai_1?split("\n")>
 #table(
   stroke: none,
-  columns: (1.4cm, auto),
+  columns: (1.6cm, auto),
   [], [],
   [${thirukkuralAttributeValueMap.lineNumber}], [${uraiLines[0]} \ ${uraiLines[1]} \ ]
 )

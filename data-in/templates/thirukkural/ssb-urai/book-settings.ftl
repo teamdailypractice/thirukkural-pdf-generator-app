@@ -18,6 +18,13 @@
   size: 24pt
 )
 #set align(center)
-சுவாமி சுத்தானந்த பாரதியார்
+கவி யோகி சுத்தானந்த பாரதி
+\
+#set text(
+  font: "JetBrains Mono",
+  size: 14.0pt
+)
+#set align(center)
+(In English couplet)
 #pagebreak()
 </#macro>

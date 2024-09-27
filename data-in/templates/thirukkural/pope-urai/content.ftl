@@ -12,7 +12,7 @@
 )
 #set align(center)
 <#assign separator = ".  ">
-= ${bookPage.getGroupId()}${separator}${bookPage.getTitle()}
+= ${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
 \
 #set align(left)
 <#assign thirukkuralAttributeValueMapList = bookPage.getThirukkuralAttributeValueMapList()>

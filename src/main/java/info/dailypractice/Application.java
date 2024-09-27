@@ -35,7 +35,7 @@ public class Application {
 //            List<BookPage> thirukkuralBookPages = book.getBookPages();
 //            System.out.println(thirukkuralBookPages.size());
 ////            for (BookPage bookPage : thirukkuralBookPages) {
-////                System.out.println(bookPage.getTitle());
+////                System.out.println(bookPage.getTitleInTamil());
 ////                System.out.println(bookPage.getContents().size());
 ////            }
 //            String datafilePath = "D:\\git\\spring-boot-learning\\data-jpa-sqlite\\data-in\\data\\book-settings.json";

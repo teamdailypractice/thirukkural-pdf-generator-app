@@ -25,6 +25,7 @@ public class ThirukkuralRepositoryCustom {
                             a.line2,
                             b.group_id,
                             c.name_ta,
+                            c.name_en,
                             e.name as author_name_1,
                             d.urai as urai_1
                             FROM thirukkural a
@@ -54,6 +55,7 @@ public class ThirukkuralRepositoryCustom {
                             a.line2,
                             b.group_id,
                             c.name_ta,
+                            c.name_en,
                             e.name as author_name_1,
                             d.urai as urai_1
                             FROM thirukkural a
