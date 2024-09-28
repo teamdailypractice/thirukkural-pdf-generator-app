@@ -1,9 +1,9 @@
 # What is the need for this project?
 1. Ultimately, the project can generate Thirukkural in any desired PDF format.
-  1. All Freemarker templates are configured in this project.
-  1. The templates generate typesetting files.
-  1. Typesetting files can be compiled into PDFs.
-  1. Typesetting was chosen for programmatic access and granular control over different types of PDFs, especially for generating exercises.
+   1. All Freemarker templates are configured in this project.
+   1. The templates generate typesetting files.
+   1. Typesetting files can be compiled into PDFs.
+   1. Typesetting was chosen for programmatic access and granular control over different types of PDFs, especially for generating exercises.
 1. [All Thirukkural content is read from an SQLite database.](https://github.com/teamdailypractice/thirukkural-admin-ui-app/blob/main/thirukkuralAdmin/dev.sqlite)
 
 # Setting up java SDK using SDKMan
