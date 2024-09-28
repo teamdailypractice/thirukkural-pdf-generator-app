@@ -1,5 +1,11 @@
-# spring-data-jpa with sqlite
+# Setting up java SDK using SDKMan
+```bash
+curl -s "https://get.sdkman.io" | bash
+source "/Users/bident/.sdkman/bin/sdkman-init.sh"
+sdk install java 21.0.3-oracle
+```
 
+# spring-data-jpa with sqlite
 * Clone the project
 * `git clone https://github.com/spring-guides/gs-accessing-data-jpa.git`
 * Run as is
@@ -16,7 +22,6 @@
 * Running Tests
 
 ## Run commands
-
 * In spring cli, when running commands provide the path in unix format
 * Incorrect - windows format
   * `generate-book-type-setting D:\git\spring-boot-learning\data-jpa-sqlite\data-in\data\book-settings.json`
