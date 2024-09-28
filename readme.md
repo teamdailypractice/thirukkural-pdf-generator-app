@@ -13,6 +13,10 @@ sdk install java 21.0.3-oracle
 sdk use java 21.0.3-oracle
 ./mvnw spring-boot:run
 ```
+## execute commands
+
+In `shell:>` run the below command. update the path correctly in unix format
+`generate-book-type-setting D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/book-settings.json`
 
 # spring-data-jpa with sqlite
 * Clone the project
