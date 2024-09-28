@@ -2,11 +2,12 @@
 
 ```bash
 curl -s "https://get.sdkman.io" | bash
-source "/Users/bident/.sdkman/bin/sdkman-init.sh"
+source "/Users/biden/.sdkman/bin/sdkman-init.sh"
 sdk install java 21.0.3-oracle
 ```
 ## Build and Run
-
+* Open application.properties and add db.path
+   * /Users/biden/Downloads/thirukkural-admin-ui-app-main/thirukkuralAdmin/dev.sqlite
 ```bash
 sdk use java 21.0.3-oracle
 ./mvnw spring-boot:run
@@ -24,7 +25,6 @@ sdk use java 21.0.3-oracle
 * Make next change
 
 ## Tasks
-
 * Running the project with sqlite dependency
 * Running Tests
 
