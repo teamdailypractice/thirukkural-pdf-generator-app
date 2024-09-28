@@ -7,6 +7,7 @@ sdk install java 21.0.3-oracle
 ```
 ## Build and Run
 * Open application.properties and add db.path
+   * /Users/biden/git/thirukkural-pdf-generator-app-master/src/main/resources/application.properties
    * /Users/biden/Downloads/thirukkural-admin-ui-app-main/thirukkuralAdmin/dev.sqlite
 ```bash
 sdk use java 21.0.3-oracle
