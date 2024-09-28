@@ -1,8 +1,15 @@
 # Setting up java SDK using SDKMan
+
 ```bash
 curl -s "https://get.sdkman.io" | bash
 source "/Users/bident/.sdkman/bin/sdkman-init.sh"
 sdk install java 21.0.3-oracle
+```
+## Build and Run
+
+```bash
+sdk use java 21.0.3-oracle
+./mvnw spring-boot:run
 ```
 
 # spring-data-jpa with sqlite
