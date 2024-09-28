@@ -1,5 +1,12 @@
-# Setting up java SDK using SDKMan
+# What is the need for this project?
+* Ultimately, the project can generate Thirukkural in any desired PDF format.
+  1. All Freemarker templates are configured in this project.
+  1. The templates generate typesetting files.
+  1. Typesetting files can be compiled into PDFs.
+  1. Typesetting was chosen for programmatic access and granular control over different types of PDFs, especially for generating exercises.
+1. All Thirukkural content is read from an SQLite database.
 
+# Setting up java SDK using SDKMan
 ```bash
 curl -s "https://get.sdkman.io" | bash
 source "/Users/biden/.sdkman/bin/sdkman-init.sh"
