@@ -22,6 +22,11 @@ sdk use java 21.0.3-oracle
 * In `shell:>` run the below command. update the path correctly in unix format
 `generate-book-type-setting D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/book-settings.json`
 
+## How to get typst
+
+* download typst from here <https://github.com/typst/typst/releases/>
+* apple - https://github.com/typst/typst/releases/download/v0.11.1/typst-aarch64-apple-darwin.tar.xz
+
 # spring-data-jpa with sqlite
 * Clone the project
 * `git clone https://github.com/spring-guides/gs-accessing-data-jpa.git`
