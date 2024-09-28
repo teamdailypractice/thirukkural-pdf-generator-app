@@ -6,6 +6,7 @@ source "/Users/biden/.sdkman/bin/sdkman-init.sh"
 sdk install java 21.0.3-oracle
 ```
 ## Build and Run
+
 * Open application.properties and add db.path
    * /Users/biden/git/thirukkural-pdf-generator-app-master/src/main/resources/application.properties
    * /Users/biden/Downloads/thirukkural-admin-ui-app-main/thirukkuralAdmin/dev.sqlite
@@ -15,7 +16,10 @@ sdk use java 21.0.3-oracle
 ```
 ## execute commands
 
-In `shell:>` run the below command. update the path correctly in unix format
+* Check `booksettings.json` file in `data-in\data` directory
+* Update the below path correctly: `templateFileAbsolutePath` and `outputFileAbsolutePath`  
+
+* In `shell:>` run the below command. update the path correctly in unix format
 `generate-book-type-setting D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/book-settings.json`
 
 # spring-data-jpa with sqlite
