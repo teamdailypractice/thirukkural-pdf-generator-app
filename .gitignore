@@ -31,3 +31,5 @@ dependency-reduced-pom.xml
 README.html
 spring-shell.log
 data-out
+
+*.pdf
