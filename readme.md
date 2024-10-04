@@ -84,3 +84,5 @@ typst compile thirukkural-only.typ
 
 
 generate-agara-mudhali-files D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/agara-mudhali-settings.json
+
+generate-agara-mudhali-home-page D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/agara-mudhali-home-settings.json

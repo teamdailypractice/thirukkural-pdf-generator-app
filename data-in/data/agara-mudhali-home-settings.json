@@ -1,0 +1,17 @@
+{
+  "title": "Page Title",
+  "hyperlinks": [
+    {
+      "text": "Google",
+      "url": "https://www.google.com"
+    },
+    {
+      "text": "Facebook",
+      "url": "https://www.facebook.com"
+    },
+    {
+      "text": "Twitter",
+      "url": "https://www.twitter.com"
+    }
+  ]
+}
