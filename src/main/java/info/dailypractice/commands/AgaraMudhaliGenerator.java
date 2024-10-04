@@ -5,10 +5,10 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
 import info.dailypractice.entity.AgaraMudhaliConfiguration;
-import info.dailypractice.entity.BookConfiguration;
 import info.dailypractice.entity.ThirukkuralAgaraMudhali;
 import info.dailypractice.html.AgaraMudhaliService;
 import info.dailypractice.service.AgaraMudhaliConfigurationProvider;
+import info.dailypractice.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
@@ -49,7 +49,7 @@ public class AgaraMudhaliGenerator {
                 });
     }
 
-    private void doProcess(AgaraMudhaliConfiguration agaraMudhaliConfiguration) throws FileNotFoundException {
+    private void doProcess(AgaraMudhaliConfiguration agaraMudhaliConfiguration) throws IOException, TemplateException {
         validateAgaraMudhaliConfiguration(agaraMudhaliConfiguration);
 
         for (int i = 0; i < agaraMudhaliConfiguration.getStartingCharacter().size(); i++) {
@@ -60,20 +60,20 @@ public class AgaraMudhaliGenerator {
             amc.setStartingCharacter(List.of(agaraMudhaliConfiguration.getStartingCharacter().get(i)));
             String outputFileName = agaraMudhaliConfiguration.getOutputFilename() + (i + 1) + ".html";
             amc.setOutputFilename(outputFileName);
-            String outputFileAbsolutePath = Paths.get(agaraMudhaliConfiguration.getOutputFileAbsolutePath(),outputFileName).toString();
+            String outputFileAbsolutePath = Paths.get(agaraMudhaliConfiguration.getOutputFileAbsolutePath(), outputFileName).toString();
             amc.setOutputFileAbsolutePath(outputFileAbsolutePath);
             generateHtmlFile(amc);
         }
     }
 
-    private void generateHtmlFile(AgaraMudhaliConfiguration amc) {
-        System.out.println("generating: " + startingCharacter);
+    private void generateHtmlFile(AgaraMudhaliConfiguration amc) throws TemplateException, IOException {
+        System.out.println("generating: " + amc.getStartingCharacter().getFirst());
         // Connect to db
-        List<ThirukkuralAgaraMudhali> agaraMudhaliItems = agaraMudhaliService.getAgaraMudhaliItems(amc.getFirstKuralId(), amc.getLastKuralId(),amc.getStartingCharacter().getFirst());
+        List<ThirukkuralAgaraMudhali> agaraMudhaliItems = agaraMudhaliService.getAgaraMudhaliItems(amc.getFirstKuralId(), amc.getLastKuralId(), amc.getStartingCharacter().getFirst());
         // populate to template object
-        processTemplateFile(amc, agaraMudhaliItem);
+        processTemplateFile(amc, agaraMudhaliItems);
         // loop through in template - if needed
-        System.out.println("generated: " + startingCharacter);
+        System.out.println("generated: " + amc.getStartingCharacter().getFirst());
     }
 
     private void validateAgaraMudhaliConfiguration(AgaraMudhaliConfiguration agaraMudhaliConfiguration) throws FileNotFoundException {
@@ -99,16 +99,17 @@ public class AgaraMudhaliGenerator {
 
         Template temp = cfg.getTemplate(templateFilename);
 
+        FileUtils.createDirectory(amc.getOutputFileAbsolutePath());
+
         try (OutputStream outputStream = new FileOutputStream(Paths.get(amc.getOutputFileAbsolutePath()).toString());
              OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8)) {
-            String information = MessageFormat.format("Processing template for: {0} -  Output File: {1}", bc.getBookName(), bc.getOutputFileAbsolutePath());
+            String information = MessageFormat.format("Processing template for: {0} -  Output File: {1}", amc.getStartingCharacter().getFirst(),amc.getOutputFileAbsolutePath());
             System.out.println(information);
 
             Map data = new HashMap();
             data.put("items", items);
+            data.put("amc", amc);
             temp.process(data, outputStreamWriter);
         }
     }
-
-
 }
