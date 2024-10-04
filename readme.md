@@ -81,3 +81,6 @@ typst compile thirukkural-only.typ
 
 * Clone the project
 * `git clone https://github.com/spring-guides/gs-accessing-data-jpa.git`
+
+
+generate-agara-mudhali-files D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/agara-mudhali-settings.json
