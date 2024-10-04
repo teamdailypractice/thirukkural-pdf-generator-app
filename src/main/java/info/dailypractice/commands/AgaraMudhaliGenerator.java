@@ -58,9 +58,22 @@ public class AgaraMudhaliGenerator {
             amc.setLastKuralId(agaraMudhaliConfiguration.getLastKuralId());
             amc.setTemplateFileAbsolutePath(agaraMudhaliConfiguration.getTemplateFileAbsolutePath());
             amc.setStartingCharacter(List.of(agaraMudhaliConfiguration.getStartingCharacter().get(i)));
-            String outputFileName = agaraMudhaliConfiguration.getOutputFilename() + (i + 1) + ".html";
-            amc.setOutputFilename(outputFileName);
-            String outputFileAbsolutePath = Paths.get(agaraMudhaliConfiguration.getOutputFileAbsolutePath(), outputFileName).toString();
+            amc.setCurrentItem(agaraMudhaliConfiguration.getStartingCharacter().get(i));
+            String currentPageName = agaraMudhaliConfiguration.getOutputFilename() + (i + 1) + ".html";
+            amc.setCurrrentPageName(currentPageName);
+            int previousPage = i - 1;
+            if(previousPage >= 0) {
+                amc.setPreviousItem(agaraMudhaliConfiguration.getStartingCharacter().get(i-1));
+                amc.setPreviousPageName(agaraMudhaliConfiguration.getOutputFilename() + (previousPage + 1) + ".html");
+            }
+            int nextPage = i + 2;
+            if(nextPage <= agaraMudhaliConfiguration.getStartingCharacter().size()) {
+                amc.setNextItem(agaraMudhaliConfiguration.getStartingCharacter().get(i+1));
+                amc.setNextPageName(agaraMudhaliConfiguration.getOutputFilename() + (nextPage) + ".html");
+            }
+
+            amc.setOutputFilename(currentPageName);
+            String outputFileAbsolutePath = Paths.get(agaraMudhaliConfiguration.getOutputFileAbsolutePath(), amc.getOutputFilename()).toString();
             amc.setOutputFileAbsolutePath(outputFileAbsolutePath);
             generateHtmlFile(amc);
         }

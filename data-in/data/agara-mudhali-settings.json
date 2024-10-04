@@ -3,10 +3,10 @@
     "firstKuralId": 1,
     "lastKuralId": 1080,
     "startingCharacter": [
-      "ஞா","யா"
+      "அ","ஆ","ஞா","யா"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/agaramudhali/agaramudhali.ftl",
-    "outputFilename":"a",
+    "outputFilename":"agaramudhali",
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/agaramudhali"
   }
 ]

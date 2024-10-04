@@ -20,6 +20,14 @@ public class AgaraMudhaliConfiguration {
     @JsonProperty("outputFileAbsolutePath")
     private String outputFileAbsolutePath;
 
+    private String currrentPageName;
+    private String previousPageName;
+    private String nextPageName;
+
+    private String currentItem;
+    private String previousItem;
+    private String nextItem;
+
     public AgaraMudhaliConfiguration() {
     }
 
@@ -69,6 +77,54 @@ public class AgaraMudhaliConfiguration {
 
     public void setOutputFileAbsolutePath(String outputFileAbsolutePath) {
         this.outputFileAbsolutePath = outputFileAbsolutePath;
+    }
+
+    public String getCurrrentPageName() {
+        return currrentPageName;
+    }
+
+    public void setCurrrentPageName(String currrentPageName) {
+        this.currrentPageName = currrentPageName;
+    }
+
+    public String getPreviousPageName() {
+        return previousPageName;
+    }
+
+    public void setPreviousPageName(String previousPageName) {
+        this.previousPageName = previousPageName;
+    }
+
+    public String getNextPageName() {
+        return nextPageName;
+    }
+
+    public void setNextPageName(String nextPageName) {
+        this.nextPageName = nextPageName;
+    }
+
+    public String getCurrentItem() {
+        return currentItem;
+    }
+
+    public void setCurrentItem(String currentItem) {
+        this.currentItem = currentItem;
+    }
+
+    public String getPreviousItem() {
+        return previousItem;
+    }
+
+    public void setPreviousItem(String previousItem) {
+        this.previousItem = previousItem;
+    }
+
+    public String getNextItem() {
+        return nextItem;
+    }
+
+    public void setNextItem(String nextItem) {
+        this.nextItem = nextItem;
     }
 
     @Override
