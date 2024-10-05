@@ -1,10 +1,12 @@
 package info.dailypractice.commands;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
 import info.dailypractice.entity.BookConfiguration;
+import info.dailypractice.entity.HyperlinksList;
 import info.dailypractice.pdf.Book;
 import info.dailypractice.pdf.BookPage;
 import info.dailypractice.service.BookConfigurationProvider;
@@ -27,20 +29,31 @@ import java.util.Map;
 public class TypstFileGenerator {
     public static final String TYPST_FILE_EXTENSION = "typ";
     @Autowired
-    private BookConfigurationProvider bookConfigurationProvider;
-    @Autowired
     private Book book;
+    @Autowired
+    private ObjectMapper objectMapper;
 
-    public TypstFileGenerator() {
-    }
 
-    public TypstFileGenerator(BookConfigurationProvider bookConfigurationProvider) {
-        this.bookConfigurationProvider = bookConfigurationProvider;
-    }
+//    @ShellMethod("generate html page for books")
+//    public void generateBookHomePage(String dataFilepath) throws IOException, RuntimeException {
+//        bookConfigurationProvider.getBookConfiguration(dataFilepath).
+//                forEach(bookConfiguration -> {
+//                    try {
+//                        doProcess(bookConfiguration);
+//                    } catch (TemplateException e) {
+//                        throw new RuntimeException(e);
+//                    } catch (IOException e) {
+//                        throw new RuntimeException(e);
+//                    }
+//                });
+//    }
 
     @ShellMethod("generate typst file for book")
     public void generateBookTypeSetting(String dataFilepath) throws IOException, RuntimeException {
-        bookConfigurationProvider.getBookConfiguration(dataFilepath).
+
+        BookConfigurationProvider  bookConfigurationProvider = objectMapper.readValue(new File(dataFilepath), BookConfigurationProvider.class);
+
+        bookConfigurationProvider.getBookConfigurationList().
                 forEach(bookConfiguration -> {
                     try {
                         doProcess(bookConfiguration);

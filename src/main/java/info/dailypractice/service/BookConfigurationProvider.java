@@ -17,24 +17,69 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-@Service
+
 public class BookConfigurationProvider {
-    @Autowired
-    private ObjectMapper objectMapper;
+    private String title;
+    private String templateFileAbsolutePath;
+    private String outputFileAbsolutePath;
+    private List<BookConfiguration> bookConfigurationList;
 
-    public List<BookConfiguration> getBookConfiguration(String dataFilepath) throws IOException {
-        List<BookConfiguration> BookConfigurations = new ArrayList<>();
+//    public List<BookConfiguration> getBookConfiguration(String dataFilepath) throws IOException {
+//        List<BookConfiguration> BookConfigurations = new ArrayList<>();
+//
+//        String data = Files.readAllLines(Path.of(dataFilepath), StandardCharsets.UTF_8)
+//                .stream().collect(Collectors.joining("\n"));
+//        try {
+//            List<BookConfiguration> pcs = objectMapper.readValue(data, new TypeReference<List<BookConfiguration>>() {
+//            });
+//            BookConfigurations.addAll(pcs);
+//
+//        } catch (JsonProcessingException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return BookConfigurations;
+//    }
 
-        String data = Files.readAllLines(Path.of(dataFilepath), StandardCharsets.UTF_8)
-                .stream().collect(Collectors.joining("\n"));
-        try {
-            List<BookConfiguration> pcs = objectMapper.readValue(data, new TypeReference<List<BookConfiguration>>() {
-            });
-            BookConfigurations.addAll(pcs);
 
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
-        return BookConfigurations;
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getTemplateFileAbsolutePath() {
+        return templateFileAbsolutePath;
+    }
+
+    public void setTemplateFileAbsolutePath(String templateFileAbsolutePath) {
+        this.templateFileAbsolutePath = templateFileAbsolutePath;
+    }
+
+    public String getOutputFileAbsolutePath() {
+        return outputFileAbsolutePath;
+    }
+
+    public void setOutputFileAbsolutePath(String outputFileAbsolutePath) {
+        this.outputFileAbsolutePath = outputFileAbsolutePath;
+    }
+
+    public List<BookConfiguration> getBookConfigurationList() {
+        return bookConfigurationList;
+    }
+
+    public void setBookConfigurationList(List<BookConfiguration> bookConfigurationList) {
+        this.bookConfigurationList = bookConfigurationList;
+    }
+
+    @Override
+    public String toString() {
+        return "BookConfigurationProvider{" +
+               "title='" + title + '\'' +
+               ", templateFileAbsolutePath='" + templateFileAbsolutePath + '\'' +
+               ", outputFileAbsolutePath='" + outputFileAbsolutePath + '\'' +
+               ", bookConfigurationList=" + bookConfigurationList +
+               '}';
     }
 }
