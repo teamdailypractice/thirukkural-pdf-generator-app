@@ -1,87 +1,107 @@
 {
-  "title": "அகர வரிசை",
+  "title": "அகர வரிசை - 1080 வரை",
   "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/agaramudhali/agaramudhali-home.ftl",
   "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/agaramudhali/index.html",
-  "hyperlinks": [
+  "hyperlinksWithDescription": [
     {
       "text": "அ",
-      "url": "agaramudhali-1.html"
+      "url": "agaramudhali-1.html",
+      "count": 141
     },
     {
       "text": "ஆ",
-      "url": "agaramudhali-2.html"
+      "url": "agaramudhali-2.html",
+      "count": 23
     },
     {
       "text": "இ",
-      "url": "agaramudhali-3.html"
+      "url": "agaramudhali-3.html",
+      "count": 102
     },
     {
       "text": "ஈ",
-      "url": "agaramudhali-4.html"
+      "url": "agaramudhali-4.html",
+      "count": 8
     },
     {
       "text": "உ",
-      "url": "agaramudhali-5.html"
+      "url": "agaramudhali-5.html",
+      "count": 60
     },
     {
       "text": "ஊ",
-      "url": "agaramudhali-6.html"
+      "url": "agaramudhali-6.html",
+      "count": 9
     },
     {
       "text": "எ",
-      "url": "agaramudhali-7.html"
+      "url": "agaramudhali-7.html",
+      "count": 41
     },
     {
       "text": "ஏ",
-      "url": "agaramudhali-8.html"
+      "url": "agaramudhali-8.html",
+      "count": 8
     },
     {
       "text": "ஐ",
-      "url": "agaramudhali-9.html"
+      "url": "agaramudhali-9.html",
+      "count": 4
     },
     {
       "text": "ஒ",
-      "url": "agaramudhali-10.html"
+      "url": "agaramudhali-10.html",
+      "count": 37
     },
     {
       "text": "ஓ",
-      "url": "agaramudhali-11.html"
+      "url": "agaramudhali-11.html",
+      "count": 4
     },
     {
       "text": "க",
-      "url": "agaramudhali-12.html"
+      "url": "agaramudhali-12.html",
+      "count": 131
     },
     {
       "text": "ச",
-      "url": "agaramudhali-13.html"
+      "url": "agaramudhali-13.html",
+      "count": 74
     },
     {
       "text": "ஞ",
-      "url": "agaramudhali-14.html"
+      "url": "agaramudhali-14.html",
+      "count": 1
     },
     {
       "text": "த",
-      "url": "agaramudhali-15.html"
+      "url": "agaramudhali-15.html",
+      "count": 82
     },
     {
       "text": "ந",
-      "url": "agaramudhali-16.html"
+      "url": "agaramudhali-16.html",
+      "count": 84
     },
     {
       "text": "ப",
-      "url": "agaramudhali-17.html"
+      "url": "agaramudhali-17.html",
+      "count": 124
     },
     {
       "text": "ம",
-      "url": "agaramudhali-18.html"
+      "url": "agaramudhali-18.html",
+      "count": 71
     },
     {
       "text": "ய",
-      "url": "agaramudhali-19.html"
+      "url": "agaramudhali-19.html",
+      "count": 6
     },
     {
       "text": "வ",
-      "url": "agaramudhali-20.html"
+      "url": "agaramudhali-20.html",
+      "count": 70
     }
   ]
 }

@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Thirukkural Agara Mudhali">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">திருக்குறள் Thirukkural</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
@@ -35,10 +35,10 @@
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Thirukkural</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">தேடுக Search</a></li>
-                  <li><a class="dropdown-item active" href="#">அ..ஆ..க..கா</a></li>
-                  <li><a class="dropdown-item" href="#">உரைகள்</a></li>
-                  <li><a class="dropdown-item" href="#">Translations</a></li>
+                    <li><a class="dropdown-item" href="../index.html">தேடுக Search</a></li>
+                    <li><a class="dropdown-item active" href="#">அ..ஆ..க..கா</a></li>
+                    <li><a class="dropdown-item" href="../commentaries.html">உரைகள்</a></li>
+                    <li><a class="dropdown-item" href="../translations.html">Translations</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -54,11 +54,11 @@
                 <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                   aria-expanded="false">DailyPractice</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="../addition.html">Addition</a></li>
-                  <li><a class="dropdown-item" href="../subtraction.html">Subtraction</a></li>
-                  <li><a class="dropdown-item" href="../mul-table-s1.html">Multiplication Table</a></li>
-                  <li><a class="dropdown-item" href="../division.html">Division</a></li>
-                  <li><a class="dropdown-item" href="../index.html">Home</a></li>
+                  <li><a class="dropdown-item" href="../../addition.html">Addition</a></li>
+                  <li><a class="dropdown-item" href="../../subtraction.html">Subtraction</a></li>
+                  <li><a class="dropdown-item" href="../../mul-table-s1.html">Multiplication Table</a></li>
+                  <li><a class="dropdown-item" href="../../division.html">Division</a></li>
+                  <li><a class="dropdown-item" href="../../index.html">Home</a></li>
                 </ul>
               </li>
             </ul>

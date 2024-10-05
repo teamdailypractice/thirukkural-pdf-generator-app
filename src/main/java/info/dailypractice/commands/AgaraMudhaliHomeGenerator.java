@@ -5,7 +5,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
-import info.dailypractice.entity.HyperlinksList;
+import info.dailypractice.entity.HyperlinksWithDescriptionList;
 import info.dailypractice.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
@@ -27,16 +27,16 @@ public class AgaraMudhaliHomeGenerator {
 
     @ShellMethod("generate agaramudhali html files as per configuration")
     public void generateAgaraMudhaliHomePage(String dataFilepath) throws TemplateException, IOException {
-        HyperlinksList hyperlinksList = objectMapper.readValue(new File(dataFilepath), HyperlinksList.class);
+        HyperlinksWithDescriptionList hyperlinksList = objectMapper.readValue(new File(dataFilepath), HyperlinksWithDescriptionList.class);
         doProcess(hyperlinksList);
     }
 
-    private void doProcess(HyperlinksList hyperlinksList) throws IOException, TemplateException {
+    private void doProcess(HyperlinksWithDescriptionList hyperlinksList) throws IOException, TemplateException {
         validateConfiguration(hyperlinksList);
         processTemplateFile(hyperlinksList);
     }
 
-    private void validateConfiguration(HyperlinksList hyperlinks) throws FileNotFoundException {
+    private void validateConfiguration(HyperlinksWithDescriptionList hyperlinks) throws FileNotFoundException {
 
         if (!Files.exists(Path.of(hyperlinks.getTemplateFileAbsolutePath()))) {
             System.out.println("File does not exist: " + hyperlinks.getTemplateFileAbsolutePath());
@@ -44,7 +44,7 @@ public class AgaraMudhaliHomeGenerator {
         }
     }
 
-    private void processTemplateFile(HyperlinksList hyperlinks) throws IOException, TemplateException {
+    private void processTemplateFile(HyperlinksWithDescriptionList hyperlinks) throws IOException, TemplateException {
         Path template = Paths.get(hyperlinks.getTemplateFileAbsolutePath());
         String templateFileDirectory = template.getParent().toString();
         String templateFilename = template.getFileName().toString();
