@@ -1,12 +1,12 @@
 {
-  "title": "Thirukkural PDF Commentary/Translation",
+  "title": "Thirukkural PDF Commentary/Translation 1080",
   "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/book-html/books-listing.ftl",
   "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/books.html",
 
   "bookConfigurationList": [
     {
       "author": "திருவள்ளுவர்",
-      "description": "திருக்குறள் மட்டும் 1080 வரை",
+      "description": "திருக்குறள் மட்டும் 1080 வரை Tamil",
       "bookName": "thirukkural-tamil-only-1080",
       "authorId": 1,
       "firstKuralId": 1,
@@ -22,7 +22,7 @@
     },
     {
       "author": "மு. வரதராசனார்",
-      "description": "10 குறள் முன் பக்கம் உரை பின் பக்கம்",
+      "description": "குறள் முன்-பக்கம்; உரை பின்-பக்கம் Tamil",
       "bookName": "thirukkural-tamil-muva-urai-f1",
       "authorId": 1,
       "firstKuralId": 1,
@@ -38,7 +38,7 @@
     },
     {
       "author": "மு. வரதராசனார்",
-      "description": "குறளுக்கு கீழே உரை",
+      "description": "குறளுக்கு கீழே உரை Tamil",
       "bookName": "thirukkural-tamil-muva-urai-f2",
       "authorId": 1,
       "firstKuralId": 1,
@@ -54,7 +54,7 @@
     },
     {
       "author": "கலைஞர்",
-      "description": "10 குறள் முன் பக்கம் உரை பின் பக்கம்",
+      "description": "குறள் முன்-பக்கம் உரை பின்-பக்கம் Tamil",
       "bookName": "thirukkural-tamil-muka-urai-f1",
       "authorId": 6,
       "firstKuralId": 1,
@@ -70,7 +70,7 @@
     },
     {
       "author": "கலைஞர்",
-      "description": "குறளுக்கு கீழே உரை",
+      "description": "குறளுக்கு கீழே உரை Tamil",
       "bookName": "thirukkural-tamil-muka-urai-f2",
       "authorId": 6,
       "firstKuralId": 1,
@@ -86,7 +86,7 @@
     },
     {
       "author": "மணக்குடவர்",
-      "description": "10 குறள் முன் பக்கம் உரை பின் பக்கம்",
+      "description": "குறள் முன்-பக்கம் உரை பின்-பக்கம் Tamil",
       "bookName": "thirukkural-tamil-maku-urai-f1",
       "authorId": 2,
       "firstKuralId": 1,
@@ -102,7 +102,7 @@
     },
     {
       "author": "மணக்குடவர்",
-      "description": "குறளுக்கு கீழே உரை",
+      "description": "குறளுக்கு கீழே உரை Tamil",
       "bookName": "thirukkural-tamil-maku-urai-f2",
       "authorId": 2,
       "firstKuralId": 1,
@@ -118,7 +118,7 @@
     },
     {
       "author": "Kavi Yogi Shuddhananda Bharati",
-      "description": "Thirukkural front page translation back page",
+      "description": "Thirukkural front page translation back page English",
       "bookName": "thirukkural-english-ssb-urai-f1",
       "authorId": 4,
       "firstKuralId": 1,
@@ -134,7 +134,7 @@
     },
     {
       "author": "Kavi Yogi Shuddhananda Bharati",
-      "description": "Each Thirukkural followed by the translation",
+      "description": "Each Thirukkural followed by the translation English",
       "bookName": "thirukkural-english-ssb-urai-f2",
       "authorId": 4,
       "firstKuralId": 1,
@@ -150,7 +150,7 @@
     },
     {
       "author": "Kavi Yogi Shuddhananda Bharati",
-      "description": "Thirukkural translation only",
+      "description": "Thirukkural translation only English",
       "bookName": "thirukkural-english-ssb-urai-f3",
       "authorId": 4,
       "firstKuralId": 1,
@@ -166,7 +166,7 @@
     },
     {
       "author": "George Uglow Pope",
-      "description": "Thirukkural front page translation back page",
+      "description": "Thirukkural front page translation back page English",
       "bookName": "thirukkural-english-gupope-urai-f1",
       "authorId": 5,
       "firstKuralId": 1,
@@ -182,7 +182,7 @@
     },
     {
       "author": "George Uglow Pope",
-      "description": "Each Thirukkural followed by the translation",
+      "description": "Each Thirukkural followed by the translation English",
       "bookName": "thirukkural-english-gupope-urai-f2",
       "authorId": 5,
       "firstKuralId": 1,

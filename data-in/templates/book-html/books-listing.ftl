@@ -19,7 +19,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/agaramudhali.css">
+    <style>
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+            min-height: 100vh;
+        }
+        table.dataTable tbody td {
+            white-space: normal;  /* Enable text wrapping */
+        }
+    </style>
 
     <title>${bcp.getTitle()}</title>
 </head>
@@ -77,14 +88,16 @@
         <table id="example" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>${bcp.getTitle()}</th>
+                    <th>Author</th>
+                    <th>Description</th>
                 </tr>
             </thead>
             <tbody>
                 <#assign bookConfigurationList=bcp.getBookConfigurationList()>
                     <#list bookConfigurationList as bookConfiguration>
                         <tr>
-                            <td><a href="downloads/${bookConfiguration.getBookName()}.pdf">${bookConfiguration.getAuthor()} ${bookConfiguration.getDescription()}</a></td>
+                            <td><a href="downloads/${bookConfiguration.getBookName()}.pdf">${bookConfiguration.getAuthor()}</a></td>
+                            <td><a href="downloads/${bookConfiguration.getBookName()}.pdf">${bookConfiguration.getDescription()}</a></td>
                         </tr>
                     </#list>
             </tbody>
@@ -104,10 +117,14 @@
 
     <!-- Initialize DataTable -->
     <script>
+        //"ordering": false //disables sorting completely
+        //"order": []  // Disable default sorting on page load
+        // { "orderable": false, "targets": [0, 2] }  // Disable sorting for columns 0 and 2 (Name and Office)
         $(document).ready(function () {
             $('#example').DataTable({
                 "paging": false,
-                "ordering": false
+                "order": []
+
             });
         });
     </script>

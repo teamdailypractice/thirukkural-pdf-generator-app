@@ -6,10 +6,19 @@
 <#assign lastKuralId = book.getBookConfiguration().getLastKuralId()>
 <#list book.getBookPages() as bookPage>
 #set page("a4")
+<#assign currentGroupId=bookPage.getGroupId()>
+
+<#if currentGroupId == 64 || currentGroupId == 70>
 #set text(
   font: "TSCu_SaiIndira",
-  size: 12pt
+  size: 10.5pt
 )
+<#else>
+#set text(
+  font: "TSCu_SaiIndira",
+  size: 12.0pt
+)
+</#if>
 #set align(center)
 <#assign separator = ".  ">
 = ${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
@@ -23,7 +32,8 @@
   [], [],
   [${thirukkuralAttributeValueMap.lineNumber}], [${thirukkuralAttributeValueMap.line1} \ ${thirukkuralAttributeValueMap.line2} \ ]
 )
-${thirukkuralAttributeValueMap.urai_1}
+<#assign urai=thirukkuralAttributeValueMap.urai_1>
+${urai?replace("\n", " ")}
 <#assign currentKuralNumber = thirukkuralAttributeValueMap.lineNumber?number>
 <#if currentKuralNumber % 5 == 0 && currentKuralNumber != lastKuralId>
 #pagebreak()

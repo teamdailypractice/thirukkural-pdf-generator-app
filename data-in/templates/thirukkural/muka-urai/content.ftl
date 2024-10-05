@@ -25,15 +25,30 @@
 )
 </#list>
 #pagebreak()
+<#assign currentGroupId=bookPage.getGroupId()>
+<#if currentGroupId == 59 || currentGroupId == 73 || currentGroupId == 108>
+#set text(
+  font: "TSCu_SaiIndira",
+  size: 10pt
+)
+<#elseif currentGroupId == 64>
+#set text(
+  font: "TSCu_SaiIndira",
+  size: 9.8pt
+)
+<#else>
 #set text(
   font: "TSCu_SaiIndira",
   size: 10.6pt
 )
+</#if>
+
 <#assign spaces=".  ">
 <#assign lineNumber=".  ">
 <#list thirukkuralAttributeValueMapList as thirukkuralAttributeValueMap>
-${thirukkuralAttributeValueMap.lineNumber}${spaces}${thirukkuralAttributeValueMap.urai_1}
-<#assign lineNumber=thirukkuralAttributeValueMap.lineNumber>
+    <#assign urai=thirukkuralAttributeValueMap.urai_1>
+    ${thirukkuralAttributeValueMap.lineNumber}${spaces}${urai?replace("\n", " ")}
+    <#assign lineNumber=thirukkuralAttributeValueMap.lineNumber>
 \
 </#list>
 <#if lineNumber != lastKuralId>
