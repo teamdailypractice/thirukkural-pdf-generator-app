@@ -1,7 +1,7 @@
 {
-  "title": "அகர வரிசை - 1080 வரை",
-  "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/agaramudhali/agaramudhali-home.ftl",
-  "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/agaramudhali/index.html",
+  "title": "Thirukkural PDF Commentary/Translation",
+  "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/book-html/books-listing.ftl",
+  "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/books.html",
 
   "bookConfigurationList": [
     {

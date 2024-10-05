@@ -7,9 +7,11 @@ import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
 import info.dailypractice.entity.BookConfiguration;
 import info.dailypractice.entity.HyperlinksList;
+import info.dailypractice.entity.HyperlinksWithDescriptionList;
 import info.dailypractice.pdf.Book;
 import info.dailypractice.pdf.BookPage;
 import info.dailypractice.service.BookConfigurationProvider;
+import info.dailypractice.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
@@ -34,24 +36,23 @@ public class TypstFileGenerator {
     private ObjectMapper objectMapper;
 
 
-//    @ShellMethod("generate html page for books")
-//    public void generateBookHomePage(String dataFilepath) throws IOException, RuntimeException {
-//        bookConfigurationProvider.getBookConfiguration(dataFilepath).
-//                forEach(bookConfiguration -> {
-//                    try {
-//                        doProcess(bookConfiguration);
-//                    } catch (TemplateException e) {
-//                        throw new RuntimeException(e);
-//                    } catch (IOException e) {
-//                        throw new RuntimeException(e);
-//                    }
-//                });
-//    }
+    private BookConfigurationProvider getBookConfigurationProvider(String dataFilepath) throws IOException {
+        BookConfigurationProvider bookConfigurationProvider = objectMapper
+                .readValue(new File(dataFilepath), BookConfigurationProvider.class);
+        return bookConfigurationProvider;
+    }
+
+    @ShellMethod("generate html page for books")
+    public void generateBookHomePage(String dataFilepath) throws IOException, RuntimeException, TemplateException {
+        BookConfigurationProvider bookConfigurationProvider = getBookConfigurationProvider(dataFilepath);
+        validateBookConfigurationProvider(bookConfigurationProvider);
+        processTemplateFile(bookConfigurationProvider);
+    }
 
     @ShellMethod("generate typst file for book")
     public void generateBookTypeSetting(String dataFilepath) throws IOException, RuntimeException {
 
-        BookConfigurationProvider  bookConfigurationProvider = objectMapper.readValue(new File(dataFilepath), BookConfigurationProvider.class);
+        BookConfigurationProvider bookConfigurationProvider = getBookConfigurationProvider(dataFilepath);
 
         bookConfigurationProvider.getBookConfigurationList().
                 forEach(bookConfiguration -> {
@@ -109,5 +110,42 @@ public class TypstFileGenerator {
             temp.process(data, outputStreamWriter);
         }
     }
+
+    private static void validateBookConfigurationProvider(BookConfigurationProvider bcp) throws FileNotFoundException {
+        if (!Files.exists(Path.of(bcp.getTemplateFileAbsolutePath()))) {
+            System.out.println("File does not exist: " + bcp.getTemplateFileAbsolutePath());
+            throw new FileNotFoundException(bcp.getTemplateFileAbsolutePath());
+        }
+    }
+
+    private void processTemplateFile(BookConfigurationProvider bcp) throws IOException, TemplateException {
+        Path template = Paths.get(bcp.getTemplateFileAbsolutePath());
+        String templateFileDirectory = template.getParent().toString();
+        String templateFilename = template.getFileName().toString();
+        Configuration cfg = new Configuration(Configuration.VERSION_2_3_31);
+        cfg.setDirectoryForTemplateLoading(new File(templateFileDirectory));
+        // Recommended settings for new projects:
+        cfg.setDefaultEncoding("UTF-8");
+        cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);
+        cfg.setLogTemplateExceptions(false);
+        cfg.setWrapUncheckedExceptions(true);
+        cfg.setFallbackOnNullLoopVariable(false);
+
+        Template temp = cfg.getTemplate(templateFilename);
+
+        FileUtils.createDirectory(bcp.getOutputFileAbsolutePath());
+
+        try (OutputStream outputStream = new FileOutputStream(Paths.get(bcp.getOutputFileAbsolutePath()).toString());
+             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8)) {
+            String information = MessageFormat.format("Processing template for: {0} -  Output File: {1}", bcp.getTemplateFileAbsolutePath(), bcp.getOutputFileAbsolutePath());
+            System.out.println(information);
+
+            Map data = new HashMap();
+            data.put("bcp", bcp);
+
+            temp.process(data, outputStreamWriter);
+        }
+    }
+
 }
 
