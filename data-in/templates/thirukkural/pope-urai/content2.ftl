@@ -8,27 +8,51 @@
 #set page("a4")
 #set text(
   font: "TSCu_SaiIndira",
-  size: 12pt
+  size: 9.5pt
 )
 #set align(center)
 <#assign separator = ".  ">
 = ${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
 \
+<#assign currentGroupId = bookPage.getGroupId()?number>
+<#if currentGroupId == 2 || currentGroupId == 26 || currentGroupId == 45 || currentGroupId == 48 || currentGroupId == 50 || currentGroupId == 64 || currentGroupId == 73 || currentGroupId == 92 || currentGroupId == 104>
+#set text(
+  font: "JetBrains Mono",
+  size: 10.0pt
+)
+<#else>
+#set text(
+  font: "JetBrains Mono",
+  size: 11.0pt
+)
+</#if>
+
+${bookPage.getGroupId()}${separator}${bookPage.getTitleInEnglish()}
+\
 #set align(left)
 <#assign thirukkuralAttributeValueMapList = bookPage.getThirukkuralAttributeValueMapList()>
 <#list thirukkuralAttributeValueMapList as thirukkuralAttributeValueMap>
+
 #table(
   stroke: none,
   columns: (2cm, auto),
   [], [],
   [${thirukkuralAttributeValueMap.lineNumber}], [${thirukkuralAttributeValueMap.line1} \ ${thirukkuralAttributeValueMap.line2} \ ]
 )
-${thirukkuralAttributeValueMap.urai_1}
+
+<#assign uraiLines=thirukkuralAttributeValueMap.urai_1?split("\n")>
+#table(
+  stroke: none,
+  columns: (2cm, auto),
+  [], [],
+  [${thirukkuralAttributeValueMap.lineNumber}], [${uraiLines[0]} \ ${uraiLines[1]} \ ]
+)
 <#assign currentKuralNumber = thirukkuralAttributeValueMap.lineNumber?number>
-<#if currentKuralNumber % 5 == 0 && currentKuralNumber != lastKuralId>
+<#if currentKuralNumber != lastKuralId && currentKuralNumber % 5 == 0>
+#pagebreak()
+<#elseif currentKuralNumber % 10 == 0 && currentKuralNumber != lastKuralId >
 #pagebreak()
 </#if>
-
 </#list>
 
 </#list>
