@@ -71,6 +71,19 @@
             <span class="tamil-content">உரை: மு. வரதராசனார்</span><br />
             <span class="english-content">Translation: Kavi Yogi Shudhdhanandha Bharati</span>
         </div>
+
+        <!-- Navigation Links -->
+        <div class="mt-4 mb-4 d-flex justify-content-between">
+            <a href="index.html" class="btn btn-primary">அகரமுதலி தொடக்கம்</a>
+            <#if amc??>
+                <#if amc.getPreviousPageName()??>
+                <a href="${amc.getPreviousPageName()}" class="btn btn-primary">${amc.getPreviousItem()}</a>
+                </#if>
+                <#if amc.getNextPageName()??>
+                <a href="${amc.getNextPageName()}" class="btn btn-primary">${amc.getNextItem()}</a>
+                </#if>
+            </#if>
+        </div>
         <!-- ThirukkuralAgaraMudhali entity-->
         <div class="accordion" id="itemAccordion">
             <#list items as item>
@@ -119,7 +132,7 @@
         </div>
         <!-- Navigation Links -->
         <div class="mt-4 d-flex justify-content-between">
-
+            <a href="index.html" class="btn btn-primary">அகரமுதலி தொடக்கம்</a>
             <#if amc??>
                 <#if amc.getPreviousPageName()??>
                 <a href="${amc.getPreviousPageName()}" class="btn btn-primary">${amc.getPreviousItem()}</a>

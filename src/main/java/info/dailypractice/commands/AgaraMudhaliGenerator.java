@@ -37,6 +37,8 @@ public class AgaraMudhaliGenerator {
     public AgaraMudhaliGenerator() {
     }
 
+
+
     @ShellMethod("generate agaramudhali html files as per configuration")
     public void generateAgaraMudhaliFiles(String dataFilepath) throws IOException, RuntimeException {
         agaraMudhaliConfigurationProvider.getAgaraMudhaliConfiguration(dataFilepath).

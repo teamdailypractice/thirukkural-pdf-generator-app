@@ -14,8 +14,8 @@ public class HyperlinksGenerator {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @ShellMethod("generate agaramudhali html files as per configuration")
-    public void generateAgaraMudhaliHomePage(String jsonFilePath) {
+    @ShellMethod("generate home page with list of links")
+    public void generateHomePage(String jsonFilePath) {
         // Specify the path of your JSON file or the JSON content
         try {
             // Read JSON file and convert to Java object

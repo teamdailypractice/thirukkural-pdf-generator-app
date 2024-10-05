@@ -6,7 +6,7 @@
       "அ","ஆ","ஞா","யா"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/agaramudhali/agaramudhali.ftl",
-    "outputFilename":"agaramudhali",
+    "outputFilename":"agaramudhali-",
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/agaramudhali"
   }
 ]

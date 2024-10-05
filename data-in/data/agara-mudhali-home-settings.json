@@ -1,17 +1,87 @@
 {
-  "title": "Page Title",
+  "title": "அகர வரிசை",
+  "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/agaramudhali/agaramudhali-home.ftl",
+  "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/agaramudhali/index.html",
   "hyperlinks": [
     {
-      "text": "Google",
-      "url": "https://www.google.com"
+      "text": "அ",
+      "url": "agaramudhali-1.html"
     },
     {
-      "text": "Facebook",
-      "url": "https://www.facebook.com"
+      "text": "ஆ",
+      "url": "agaramudhali-2.html"
     },
     {
-      "text": "Twitter",
-      "url": "https://www.twitter.com"
+      "text": "இ",
+      "url": "agaramudhali-3.html"
+    },
+    {
+      "text": "ஈ",
+      "url": "agaramudhali-4.html"
+    },
+    {
+      "text": "உ",
+      "url": "agaramudhali-5.html"
+    },
+    {
+      "text": "ஊ",
+      "url": "agaramudhali-6.html"
+    },
+    {
+      "text": "எ",
+      "url": "agaramudhali-7.html"
+    },
+    {
+      "text": "ஏ",
+      "url": "agaramudhali-8.html"
+    },
+    {
+      "text": "ஐ",
+      "url": "agaramudhali-9.html"
+    },
+    {
+      "text": "ஒ",
+      "url": "agaramudhali-10.html"
+    },
+    {
+      "text": "ஓ",
+      "url": "agaramudhali-11.html"
+    },
+    {
+      "text": "க",
+      "url": "agaramudhali-12.html"
+    },
+    {
+      "text": "ச",
+      "url": "agaramudhali-13.html"
+    },
+    {
+      "text": "ஞ",
+      "url": "agaramudhali-14.html"
+    },
+    {
+      "text": "த",
+      "url": "agaramudhali-15.html"
+    },
+    {
+      "text": "ந",
+      "url": "agaramudhali-16.html"
+    },
+    {
+      "text": "ப",
+      "url": "agaramudhali-17.html"
+    },
+    {
+      "text": "ம",
+      "url": "agaramudhali-18.html"
+    },
+    {
+      "text": "ய",
+      "url": "agaramudhali-19.html"
+    },
+    {
+      "text": "வ",
+      "url": "agaramudhali-20.html"
     }
   ]
 }
