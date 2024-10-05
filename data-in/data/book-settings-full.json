@@ -1,8 +1,8 @@
 [
   {
     "author": "திருவள்ளுவர்",
-    "description": "திருக்குறள் மட்டும் 1080 வரை",
-    "bookName": "thirukkural-tamil-only-1080",
+    "description": "திருக்குறள்",
+    "bookName": "thirukkural-only",
     "authorId": 1,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -13,11 +13,11 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/thirukkural-only/book1.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/thirukkural-only.typ"
   },
   {
     "author": "மு. வரதராசனார்",
-    "description": "10 குறள் முன் பக்கம் உரை பின் பக்கம்",
+    "description": "குறள் ஒரு பக்கம் உரை அடுத்த பக்கம்",
     "bookName": "thirukkural-tamil-muva-urai-f1",
     "authorId": 1,
     "firstKuralId": 1,
@@ -45,12 +45,10 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/muva-urai/book2.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/muva-urai-format2.typ"
   },
   {
-    "author": "கலைஞர்",
-    "description": "10 குறள் முன் பக்கம் உரை பின் பக்கம்",
-    "bookName": "thirukkural-tamil-muka-urai-f1",
+    "bookName": "muka-urai-format1",
     "authorId": 6,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -61,12 +59,10 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/muka-urai/book1.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/muka-urai-format1.typ"
   },
   {
-    "author": "கலைஞர்",
-    "description": "குறளுக்கு கீழே உரை",
-    "bookName": "thirukkural-tamil-muka-urai-f2",
+    "bookName": "muka-urai-format2",
     "authorId": 6,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -77,12 +73,10 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/muka-urai/book2.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/muka-urai-format2.typ"
   },
   {
-    "author": "மணக்குடவர்",
-    "description": "10 குறள் முன் பக்கம் உரை பின் பக்கம்",
-    "bookName": "thirukkural-tamil-maku-urai-f1",
+    "bookName": "maku-urai-format1",
     "authorId": 2,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -93,12 +87,10 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/maku-urai/book1.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/maku-urai-format1.typ"
   },
   {
-    "author": "மணக்குடவர்",
-    "description": "குறளுக்கு கீழே உரை",
-    "bookName": "thirukkural-tamil-maku-urai-f2",
+    "bookName": "maku-urai-format2",
     "authorId": 2,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -109,12 +101,10 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/maku-urai/book2.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/maku-urai-format2.typ"
   },
   {
-    "author": "Kavi Yogi Shuddhananda Bharati",
-    "description": "Thirukkural front page translation back page",
-    "bookName": "thirukkural-english-ssb-urai-f1",
+    "bookName": "ssb-urai-format1",
     "authorId": 4,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -125,12 +115,10 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/ssb-urai/book1.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/ssb-urai-format1.typ"
   },
   {
-    "author": "Kavi Yogi Shuddhananda Bharati",
-    "description": "Each Thirukkural followed by the translation",
-    "bookName": "thirukkural-english-ssb-urai-f2",
+    "bookName": "ssb-urai-format2",
     "authorId": 4,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -141,12 +129,10 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/ssb-urai/book2.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/ssb-urai-format2.typ"
   },
   {
-    "author": "Kavi Yogi Shuddhananda Bharati",
-    "description": "Thirukkural translation only",
-    "bookName": "thirukkural-english-ssb-urai-f3",
+    "bookName": "ssb-urai-format3",
     "authorId": 4,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -160,9 +146,7 @@
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
   },
   {
-    "author": "George Uglow Pope",
-    "description": "Thirukkural front page translation back page",
-    "bookName": "thirukkural-english-gupope-urai-f1",
+    "bookName": "pope-urai-format1",
     "authorId": 5,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -173,12 +157,10 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/pope-urai/book1.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/pope-urai-format1.typ"
   },
   {
-    "author": "George Uglow Pope",
-    "description": "Each Thirukkural followed by the translation",
-    "bookName": "thirukkural-english-gupope-urai-f2",
+    "bookName": "pope-urai-format2",
     "authorId": 5,
     "firstKuralId": 1,
     "lastKuralId": 1080,
@@ -189,6 +171,6 @@
       "urai_1"
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/pope-urai/book2.ftl",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/pope-urai-format2.typ"
   }
 ]

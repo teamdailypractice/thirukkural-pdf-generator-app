@@ -25,6 +25,7 @@ import java.util.Map;
 
 @ShellComponent
 public class TypstFileGenerator {
+    public static final String TYPST_FILE_EXTENSION = "typ";
     @Autowired
     private BookConfigurationProvider bookConfigurationProvider;
     @Autowired
@@ -78,7 +79,11 @@ public class TypstFileGenerator {
 
         Template temp = cfg.getTemplate(templateFilename);
 
-        try (OutputStream outputStream = new FileOutputStream(Paths.get(bc.getOutputFileAbsolutePath()).toString());
+
+        try (OutputStream outputStream = new FileOutputStream(
+                Paths.get(bc.getOutputFileAbsolutePath(),
+                                bc.getBookName() + "." + TYPST_FILE_EXTENSION)
+                        .toString());
              OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8)) {
             String information = MessageFormat.format("Processing template for: {0} -  Output File: {1}", bc.getBookName(), bc.getOutputFileAbsolutePath());
             System.out.println(information);

@@ -8,6 +8,10 @@ import java.util.Objects;
 
 public class BookConfiguration {
 
+    @JsonProperty("author")
+    private String author;
+    @JsonProperty("description")
+    private String description;
     @JsonProperty("bookName")
     private String bookName;
     @JsonProperty("authorId")
@@ -24,6 +28,22 @@ public class BookConfiguration {
     private String outputFileAbsolutePath;
 
     public BookConfiguration() {
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getBookName() {
@@ -85,14 +105,14 @@ public class BookConfiguration {
     @Override
     public String toString() {
         return "BookConfiguration{" +
-                "bookName='" + bookName + '\'' +
-                ", authorId=" + authorId +
-                ", firstKuralId=" + firstKuralId +
-                ", lastKuralId=" + lastKuralId +
-                ", contentStructure=" + contentStructure +
-                ", templateFileAbsolutePath='" + templateFileAbsolutePath + '\'' +
-                ", outputFileAbsolutePath='" + outputFileAbsolutePath + '\'' +
-                '}';
+               "bookName='" + bookName + '\'' +
+               ", authorId=" + authorId +
+               ", firstKuralId=" + firstKuralId +
+               ", lastKuralId=" + lastKuralId +
+               ", contentStructure=" + contentStructure +
+               ", templateFileAbsolutePath='" + templateFileAbsolutePath + '\'' +
+               ", outputFileAbsolutePath='" + outputFileAbsolutePath + '\'' +
+               '}';
     }
 
     @Override
