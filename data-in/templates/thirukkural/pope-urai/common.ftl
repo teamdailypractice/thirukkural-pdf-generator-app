@@ -290,11 +290,11 @@
 #pagebreak()
 #set page("a4")
 #set text(
-  font: "TSCu_SaiIndira",
+  font: "Nirmala UI",
   size: 12pt
 )
 #set align(center)
 #outline(
-  title: "திருக்குறள் அதிகாரங்கள்"
+  title: "Topics"
 )
 </#macro>

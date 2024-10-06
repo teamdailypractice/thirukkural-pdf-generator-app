@@ -2,7 +2,7 @@
 #set page("a4")
 
 #set text(
-  font: "TSCu_SaiIndira",
+  font: "Calibri",
   size: 40pt
 )
 #set align(center)
@@ -10,14 +10,14 @@
 \
 \
 \
-திருக்குறள்
+TIRUKKURAL
 \
 \
 #set text(
-  font: "TSCu_SaiIndira",
+  font: "Calibri",
   size: 24pt
 )
 #set align(center)
-ஜி. யு. போப்
+Rev. DR. G. U. Pope
 #pagebreak()
 </#macro>
