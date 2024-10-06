@@ -10,26 +10,20 @@ public class ThirukkuralLabelDto {
     private int group_id;
     private String name_ta;
     private String name_en;
+    private String name_gu_pope;
     private String author_name_1;
     private String urai_1;
 
-    public ThirukkuralLabelDto(int kural_id, String line1, String line2, int group_id, String name_ta, String name_en, String author_name_1, String urai_1) {
+    public ThirukkuralLabelDto(int kural_id, String line1, String line2, int group_id, String name_ta, String name_en, String name_gu_pope, String author_name_1, String urai_1) {
         this.kural_id = kural_id;
         this.line1 = line1;
         this.line2 = line2;
         this.group_id = group_id;
         this.name_ta = name_ta;
         this.name_en = name_en;
+        this.name_gu_pope = name_gu_pope;
         this.author_name_1 = author_name_1;
         this.urai_1 = urai_1;
-    }
-
-    public ThirukkuralLabelDto(int kural_id, String line1, String line2, int group_id, String name_ta) {
-        this.kural_id = kural_id;
-        this.line1 = line1;
-        this.line2 = line2;
-        this.group_id = group_id;
-        this.name_ta = name_ta;
     }
 
     public int getKural_id() {
@@ -80,6 +74,14 @@ public class ThirukkuralLabelDto {
         this.name_en = name_en;
     }
 
+    public String getName_gu_pope() {
+        return name_gu_pope;
+    }
+
+    public void setName_gu_pope(String name_gu_pope) {
+        this.name_gu_pope = name_gu_pope;
+    }
+
     public String getAuthor_name_1() {
         return author_name_1;
     }
@@ -99,15 +101,16 @@ public class ThirukkuralLabelDto {
     @Override
     public String toString() {
         return "ThirukkuralLabelDto{" +
-                "kural_id=" + kural_id +
-                ", line1='" + line1 + '\'' +
-                ", line2='" + line2 + '\'' +
-                ", group_id=" + group_id +
-                ", name_ta='" + name_ta + '\'' +
-                ", name_en='" + name_en + '\'' +
-                ", author_name_1='" + author_name_1 + '\'' +
-                ", urai_1='" + urai_1 + '\'' +
-                '}';
+               "kural_id=" + kural_id +
+               ", line1='" + line1 + '\'' +
+               ", line2='" + line2 + '\'' +
+               ", group_id=" + group_id +
+               ", name_ta='" + name_ta + '\'' +
+               ", name_en='" + name_en + '\'' +
+               ", name_gu_pope='" + name_gu_pope + '\'' +
+               ", author_name_1='" + author_name_1 + '\'' +
+               ", urai_1='" + urai_1 + '\'' +
+               '}';
     }
 
     @Override
