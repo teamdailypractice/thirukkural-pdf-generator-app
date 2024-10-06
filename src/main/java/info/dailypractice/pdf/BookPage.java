@@ -10,6 +10,7 @@ import java.util.Map;
 public class BookPage {
     private String titleInTamil;
     private String titleInEnglish;
+    private String titleGUPope;
     private int groupId;
     private ArrayList<Map<String, String>> thirukkuralAttributeValueMapList = new ArrayList<>();
     private BookConfiguration bookConfiguration;
@@ -43,6 +44,14 @@ public class BookPage {
 
     public void setTitleInEnglish(String titleInEnglish) {
         this.titleInEnglish = titleInEnglish;
+    }
+
+    public String getTitleGUPope() {
+        return titleGUPope;
+    }
+
+    public void setTitleGUPope(String titleGUPope) {
+        this.titleGUPope = titleGUPope;
     }
 
     public int getGroupId() {

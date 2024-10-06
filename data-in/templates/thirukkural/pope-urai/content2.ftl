@@ -7,13 +7,13 @@
 <#list book.getBookPages() as bookPage>
 #set page("a4")
 #set text(
-  font: "TSCu_SaiIndira",
-  size: 9.5pt
+  font: "JetBrains Mono",
+  size: 11.0pt
 )
 #set align(center)
 <#assign separator = ".  ">
-= ${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
-\
+= ${bookPage.getGroupId()}${separator}${bookPage.getTitleGUPope()}
+${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
 <#assign currentGroupId = bookPage.getGroupId()?number>
 <#if currentGroupId == 2 || currentGroupId == 26 || currentGroupId == 45 || currentGroupId == 48 || currentGroupId == 50 || currentGroupId == 64 || currentGroupId == 73 || currentGroupId == 92 || currentGroupId == 104>
 #set text(
@@ -26,8 +26,6 @@
   size: 11.0pt
 )
 </#if>
-
-${bookPage.getGroupId()}${separator}${bookPage.getTitleInEnglish()}
 \
 #set align(left)
 <#assign thirukkuralAttributeValueMapList = bookPage.getThirukkuralAttributeValueMapList()>

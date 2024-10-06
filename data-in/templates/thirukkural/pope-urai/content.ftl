@@ -25,15 +25,24 @@
 )
 </#list>
 #pagebreak()
+<#assign currentGroupId = bookPage.getGroupId()?number>
+<#if currentGroupId == 6>
+#set text(
+  font: "JetBrains Mono",
+  size: 11.0pt
+)
+<#else>
 #set text(
   font: "JetBrains Mono",
   size: 13.0pt
 )
+</#if>
+
 #set align(center)
 <#assign separator = ".  ">
-= ${bookPage.getGroupId()}${separator}${bookPage.getTitleInEnglish()}
+= ${bookPage.getGroupId()}${separator}${bookPage.getTitleGUPope()}
 \
-<#assign currentGroupId = bookPage.getGroupId()?number>
+
 <#if currentGroupId == 1 || currentGroupId == 2 || currentGroupId == 19 || currentGroupId == 26 || currentGroupId == 45 || currentGroupId == 48 || currentGroupId == 50 || currentGroupId == 64 || currentGroupId == 73 || currentGroupId == 90 || currentGroupId == 92 || currentGroupId == 104>
 #set text(
   font: "JetBrains Mono",

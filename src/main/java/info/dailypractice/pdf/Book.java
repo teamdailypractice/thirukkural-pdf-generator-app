@@ -50,6 +50,7 @@ public class Book {
 //            set page title
             page.setTitleInTamil(allThirukkural.get(i).getName_ta());
             page.setTitleInEnglish(allThirukkural.get(i).getName_en());
+            page.setTitleGUPope(allThirukkural.get(i).getName_gu_pope());
             page.setGroupId(allThirukkural.get(i).getGroup_id());
             int PER_PAGE_ITEM_COUNT = 10;
 
