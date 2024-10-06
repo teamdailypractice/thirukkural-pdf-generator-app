@@ -45,6 +45,7 @@ public class TypstFileGenerator {
     @ShellMethod("generate html page for books")
     public void generateBookHomePage(String dataFilepath) throws IOException, RuntimeException, TemplateException {
         BookConfigurationProvider bookConfigurationProvider = getBookConfigurationProvider(dataFilepath);
+
         validateBookConfigurationProvider(bookConfigurationProvider);
         processTemplateFile(bookConfigurationProvider);
     }
@@ -53,6 +54,8 @@ public class TypstFileGenerator {
     public void generateBookTypeSetting(String dataFilepath) throws IOException, RuntimeException {
 
         BookConfigurationProvider bookConfigurationProvider = getBookConfigurationProvider(dataFilepath);
+//        System.out.println(bookConfigurationProvider.getPdfFontSettings());
+        book.setPdfFontSettings(bookConfigurationProvider.getPdfFontSettings());
 
         bookConfigurationProvider.getBookConfigurationList().
                 forEach(bookConfiguration -> {

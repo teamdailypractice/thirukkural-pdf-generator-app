@@ -3,27 +3,31 @@
 #counter(page).update(1)
 #set heading(numbering: none)
 
+<#assign pdfFontSettings = book.getPdfFontSettings()>
 <#assign lastKuralId = book.getBookConfiguration().getLastKuralId()>
 <#list book.getBookPages() as bookPage>
 #set page("a4")
+<#assign englishHeadingFontSize=pdfFontSettings.getEnglishHeadingFontSize()?number>
 #set text(
-  font: "Nirmala UI",
-  size: 13.0pt
+  font: "${pdfFontSettings.getEnglishFontName()}",
+  size: ${englishHeadingFontSize}pt
 )
 #set align(center)
 <#assign separator = ".  ">
 = ${bookPage.getGroupId()}${separator}${bookPage.getTitleGUPope()}
 ${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
 <#assign currentGroupId = bookPage.getGroupId()?number>
+<#assign englishBodyFontSize=pdfFontSettings.getEnglishBodyFontSize()?number>
+
 <#if currentGroupId == 2 || currentGroupId == 26 || currentGroupId == 45 || currentGroupId == 48 || currentGroupId == 50 || currentGroupId == 64 || currentGroupId == 73 || currentGroupId == 92 || currentGroupId == 104>
 #set text(
-  font: "Nirmala UI",
-  size: 11.5pt
+  font: "${pdfFontSettings.getEnglishFontName()}",
+  size: ${englishBodyFontSize - 1}pt
 )
 <#else>
 #set text(
-  font: "Nirmala UI",
-  size: 12.5pt
+  font: "${pdfFontSettings.getEnglishFontName()}",
+  size: ${englishBodyFontSize}pt
 )
 </#if>
 \

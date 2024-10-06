@@ -3,18 +3,24 @@
 #counter(page).update(1)
 #set heading(numbering: none)
 
+<#assign pdfFontSettings = book.getPdfFontSettings()>
 <#assign lastKuralId = book.getBookConfiguration().getLastKuralId()>
 <#list book.getBookPages() as bookPage>
 #set page("a4")
 #set text(
-  font: "TSCu_SaiIndira",
-  size: 12pt
+  font: "${pdfFontSettings.getTamilFontName()}",
+  size: ${pdfFontSettings.getTamilHeadingFontSize()}pt
 )
 #set align(center)
 <#assign separator = ".  ">
 = ${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
 \
+#set text(
+  font: "${pdfFontSettings.getTamilFontName()}",
+  size: ${pdfFontSettings.getTamilBodyFontSize()}pt
+)
 #set align(left)
+
 <#assign thirukkuralAttributeValueMapList = bookPage.getThirukkuralAttributeValueMapList()>
 <#list thirukkuralAttributeValueMapList as thirukkuralAttributeValueMap>
 #table(

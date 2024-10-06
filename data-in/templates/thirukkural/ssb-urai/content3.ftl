@@ -6,21 +6,22 @@
 #counter(page).update(1)
 #set heading(numbering: none)
 
+<#assign pdfFontSettings = book.getPdfFontSettings()>
 <#assign lastKuralId = book.getBookConfiguration().getLastKuralId()?c>
 <#list book.getBookPages() as bookPage>
 #set page("a4")
 <#assign thirukkuralAttributeValueMapList = bookPage.getThirukkuralAttributeValueMapList()>
 #set text(
-  font: "JetBrains Mono",
-  size: 15.0pt
+  font: "${pdfFontSettings.getEnglishFontName()}",
+  size: ${pdfFontSettings.getEnglishHeadingFontSize()}pt
 )
 #set align(center)
 <#assign separator = ".  ">
 = ${bookPage.getGroupId()}${separator}${bookPage.getTitleInEnglish()}
 \
 #set text(
-  font: "JetBrains Mono",
-  size: 13.6pt
+  font: "${pdfFontSettings.getEnglishFontName()}",
+  size: ${pdfFontSettings.getEnglishBodyFontSize()}pt
 )
 #set align(left)
 <#assign spaces=".  ">

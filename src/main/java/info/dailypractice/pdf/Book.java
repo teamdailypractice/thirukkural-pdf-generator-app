@@ -2,6 +2,7 @@ package info.dailypractice.pdf;
 
 import info.dailypractice.dto.ThirukkuralLabelDto;
 import info.dailypractice.entity.BookConfiguration;
+import info.dailypractice.entity.PdfFontSettings;
 import info.dailypractice.service.ThirukkuralService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ public class Book {
     @Autowired
     private ThirukkuralService thirukkuralService;
     private BookConfiguration bookConfiguration;
+    private PdfFontSettings pdfFontSettings;
 
     public Book() {
     }
@@ -26,6 +28,14 @@ public class Book {
 
     public void setBookConfiguration(BookConfiguration bookConfiguration) {
         this.bookConfiguration = bookConfiguration;
+    }
+
+    public PdfFontSettings getPdfFontSettings() {
+        return pdfFontSettings;
+    }
+
+    public void setPdfFontSettings(PdfFontSettings pdfFontSettings) {
+        this.pdfFontSettings = pdfFontSettings;
     }
 
     //Note: This is used in Freemarker template

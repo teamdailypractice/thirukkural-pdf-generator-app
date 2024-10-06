@@ -3,6 +3,7 @@
 #counter(page).update(1)
 #set heading(numbering: none)
 
+<#assign pdfFontSettings = book.getPdfFontSettings()>
 <#assign lastKuralId = book.getBookConfiguration().getLastKuralId()>
 <#list book.getBookPages() as bookPage>
 #set page("a4")
@@ -10,13 +11,13 @@
 
 <#if currentGroupId == 64 || currentGroupId == 70>
 #set text(
-  font: "TSCu_SaiIndira",
-  size: 10.5pt
+  font: "${pdfFontSettings.getTamilFontName()}",
+  size: ${pdfFontSettings.getTamilHeadingFontSize()?number-1.5}pt
 )
 <#else>
 #set text(
-  font: "TSCu_SaiIndira",
-  size: 12.0pt
+  font: "${pdfFontSettings.getTamilFontName()}",
+  size: ${pdfFontSettings.getTamilHeadingFontSize()?number-1}pt
 )
 </#if>
 #set align(center)
@@ -24,6 +25,16 @@
 = ${bookPage.getGroupId()}${separator}${bookPage.getTitleInTamil()}
 \
 #set align(left)
+#set text(
+  font: "${pdfFontSettings.getTamilFontName()}",
+  size: ${pdfFontSettings.getTamilBodyFontSize()}pt
+)
+<#if currentGroupId == 64 || currentGroupId == 70>
+#set text(
+  font: "${pdfFontSettings.getTamilFontName()}",
+  size: ${pdfFontSettings.getTamilBodyFontSize()?number-1.0}pt
+)
+</#if>
 <#assign thirukkuralAttributeValueMapList = bookPage.getThirukkuralAttributeValueMapList()>
 <#list thirukkuralAttributeValueMapList as thirukkuralAttributeValueMap>
 #table(

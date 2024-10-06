@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import info.dailypractice.entity.BookConfiguration;
+import info.dailypractice.entity.PdfFontSettings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,7 @@ public class BookConfigurationProvider {
     private String title;
     private String templateFileAbsolutePath;
     private String outputFileAbsolutePath;
+    private PdfFontSettings pdfFontSettings;
     private List<BookConfiguration> bookConfigurationList;
 
 //    public List<BookConfiguration> getBookConfiguration(String dataFilepath) throws IOException {
@@ -63,6 +65,14 @@ public class BookConfigurationProvider {
 
     public void setOutputFileAbsolutePath(String outputFileAbsolutePath) {
         this.outputFileAbsolutePath = outputFileAbsolutePath;
+    }
+
+    public PdfFontSettings getPdfFontSettings() {
+        return pdfFontSettings;
+    }
+
+    public void setPdfFontSettings(PdfFontSettings pdfFontSettings) {
+        this.pdfFontSettings = pdfFontSettings;
     }
 
     public List<BookConfiguration> getBookConfigurationList() {
