@@ -37,8 +37,7 @@
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="../index.html">தேடுக Search</a></li>
                     <li><a class="dropdown-item active" href="#">அ..ஆ..க..கா</a></li>
-                    <li><a class="dropdown-item" href="../commentaries.html">உரைகள்</a></li>
-                    <li><a class="dropdown-item" href="../translations.html">Translations</a></li>
+                    <li><a class="dropdown-item" href="../books.html">Books Download</a></li>
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -123,7 +122,7 @@
                                                 <!-- kural number and hyperlink -->
                                                 <a
                                                     href="../index.html?${item.getKural_id()}">${item.getKural_id()}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <audio controls src="../kural/media/${item.getKural_id()}.mp3"></audio>
+                                                <audio controls src="../../kural/media/${item.getKural_id()}.mp3"></audio>
                                         </p>
                                     </div>
                                 </div>

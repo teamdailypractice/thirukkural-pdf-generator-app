@@ -41,8 +41,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../index.html">தேடுக Search</a></li>
                             <li><a class="dropdown-item active" href="#">அ..ஆ..க..கா</a></li>
-                            <li><a class="dropdown-item" href="../commentaries.html">உரைகள்</a></li>
-                            <li><a class="dropdown-item" href="../translations.html">Translations</a></li>
+                            <li><a class="dropdown-item" href="../books.html">Books Download</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
