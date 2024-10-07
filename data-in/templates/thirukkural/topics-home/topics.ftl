@@ -19,9 +19,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/agaramudhali.css">
+    <style>
+        body {
+            font-family: 'Roboto', 'Open Sans', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 0;
+            min-height: 100vh;
+        }
+        table.dataTable tbody td {
+            white-space: normal;  /* Enable text wrapping */
+        }
+    </style>
 
-    <title>${hyperlinks.getTitle()}</title>
+    <title>${thirukkuralTopicsConfiguration.getTitle()}</title>
 </head>
 
 <body>
@@ -39,10 +50,10 @@
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">Thirukkural</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../index.html">தேடுக Search</a></li>
-                            <li><a class="dropdown-item" href="topics.html">அதிகாரங்கள் Topics</a></li>
-                            <li><a class="dropdown-item active" href="#">அ..ஆ..க..கா</a></li>
-                            <li><a class="dropdown-item" href="../books.html">Books Download</a></li>
+                            <li><a class="dropdown-item" href="index.html">தேடுக Search</a></li>
+                            <li><a class="dropdown-item" href="agaramudhali/index.html">அ..ஆ..க..கா</a></li>
+                            <li><a class="dropdown-item" href="books.html">Books Download</a></li>
+                            <li><a class="dropdown-item  active" href="#">Topics</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -61,11 +72,11 @@
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">DailyPractice</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../../addition.html">Addition</a></li>
-                            <li><a class="dropdown-item" href="../../subtraction.html">Subtraction</a></li>
-                            <li><a class="dropdown-item" href="../../mul-table-s1.html">Multiplication Table</a></li>
-                            <li><a class="dropdown-item" href="../../division.html">Division</a></li>
-                            <li><a class="dropdown-item" href="../../index.html">Home</a></li>
+                            <li><a class="dropdown-item" href="../addition.html">Addition</a></li>
+                            <li><a class="dropdown-item" href="../subtraction.html">Subtraction</a></li>
+                            <li><a class="dropdown-item" href="../mul-table-s1.html">Multiplication Table</a></li>
+                            <li><a class="dropdown-item" href="../division.html">Division</a></li>
+                            <li><a class="dropdown-item" href="../index.html">Home</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -74,20 +85,22 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 align="center">${hyperlinks.getTitle()}</h2>
+        <h2 align="center">${thirukkuralTopicsConfiguration.getTitle()}</h2>
         <table id="example" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>${hyperlinks.getTitle()}</th>
-                    <th>திருக்குறள் எண்ணிக்கை</th>
+                    <th>Id</th>
+                    <th>அதிகாரம்</th>
+                    <th>Topic</th>
                 </tr>
             </thead>
             <tbody>
-                <#assign hyperlinkItemsList=hyperlinks.getHyperlinksWithDescription()>
-                    <#list hyperlinkItemsList as hyperlinkItem>
+                    <#list thirukkuralTopicNames as thirukkuralTopicName>
                         <tr>
-                            <td><a href="${hyperlinkItem.getUrl()}" target="_blank">${hyperlinkItem.getText()}</a></td>
-                            <td>${hyperlinkItem.getCount()}</td>
+                            <#assign groupId=thirukkuralTopicName.getGroup_id()>
+                            <td>${groupId}</td>
+                            <td><a href="index.html?${groupId}a" target="_blank">${thirukkuralTopicName.getName_ta()}</a></td>
+                            <td><a href="index.html?${groupId}a" target="_blank">${thirukkuralTopicName.getName_en()}</a></td>
                         </tr>
                     </#list>
             </tbody>
@@ -107,9 +120,14 @@
 
     <!-- Initialize DataTable -->
     <script>
+        //"ordering": false //disables sorting completely
+        //"order": []  // Disable default sorting on page load
+        // { "orderable": false, "targets": [0, 2] }  // Disable sorting for columns 0 and 2 (Name and Office)
         $(document).ready(function () {
             $('#example').DataTable({
-                "paging": false  // Disable pagination
+                "paging": false,
+                "order": []
+
             });
         });
     </script>

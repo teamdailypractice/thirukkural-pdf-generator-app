@@ -26,13 +26,6 @@ source "/Users/biden/.sdkman/bin/sdkman-init.sh"
 sdk install java 21.0.3-oracle
 ```
 
-## Font installation - if not there
-
-* Currently the project is configured with two fonts
-* Tamil - **TSCu_SaiIndira** <https://www.azhagi.com/sai/TSCu_SaiIndira.ttf>
-* English - **JetBrains Mono** <https://www.jetbrains.com/lp/mono/>
-* Download and install these fonts to your system
-
 ## Build and Run
 
 * Open `application.properties` in the directory: `src/main/resources` and update the property `spring.datasource.url` to the right path
@@ -49,6 +42,7 @@ sdk install java 21.0.3-oracle
 sdk use java 21.0.3-oracle
 ./mvnw spring-boot:run
 ```
+
 ## Execute project specific commands 
 
 * Check `booksettings.json` file in `data-in\data` directory
@@ -64,7 +58,18 @@ sdk use java 21.0.3-oracle
 * on successful running of the above command, it produces many `.typ` files in `data-out` directory
 * These files can be converted to PDF files
 
-## How to get typst executable?
+## Final commands to produce output files to data-out directory
+
+* Run the project
+* From spring shell in the command `shell:>` run the below commands
+* **Note**: Each configuration json file has to checked and updated with the correct absolute path before running any of the below commands
+* agaramudhali website pages -  `generate-agara-mudhali-files D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/agara-mudhali-settings.json`
+* agaramudhali web site home page - `generate-agara-mudhali-home-page D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/agara-mudhali-home-settings.json`
+* Books download listing - `generate-book-home-page D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/book-settings.json`
+* Thirukkural Topics listing - `generate-thirukkural-topics-home-page D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/thirukkural-topics-home-settings.json`
+* Thirukkural Pdf files generation - `generate-book-type-setting D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/book-settings.json`
+
+## How to get typst executable - only needed for pdf generation?
 
 * Download typst from here <https://github.com/typst/typst/releases/>
 * MacOS - https://github.com/typst/typst/releases/download/v0.11.1/typst-aarch64-apple-darwin.tar.xz
@@ -82,9 +87,4 @@ typst compile thirukkural-only.typ
 * Clone the project
 * `git clone https://github.com/spring-guides/gs-accessing-data-jpa.git`
 
-
-generate-agara-mudhali-files D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/agara-mudhali-settings.json
-generate-agara-mudhali-home-page D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/agara-mudhali-home-settings.json
-generate-book-home-page D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/book-settings.json
-generate-book-type-setting D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/book-settings.json
 

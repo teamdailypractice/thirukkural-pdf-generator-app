@@ -3,6 +3,7 @@ package info.dailypractice.service;
 import info.dailypractice.dao.ThirukkuralRepository;
 import info.dailypractice.dao.ThirukkuralRepositoryCustom;
 import info.dailypractice.dto.ThirukkuralLabelDto;
+import info.dailypractice.dto.ThirukkuralTopicDto;
 import info.dailypractice.entity.Thirukkural;
 import info.dailypractice.entity.ThirukkuralAgaraMudhali;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +42,10 @@ public class ThirukkuralService {
     //getAllThirukkuralWithLabel
     public List<ThirukkuralAgaraMudhali> getAgaraMudhaliItems(int firstKuralId,  int lastKuralId, String startingCharacter) {
         return (List<ThirukkuralAgaraMudhali>) this.thirukkuralRepositoryCustom.getAgaraMudhaliItems(firstKuralId,lastKuralId,startingCharacter);
+    }
+
+    public List<ThirukkuralTopicDto> getThirukkuralTopicNames(int firstTopicId, int lastTopicId) {
+        return (List<ThirukkuralTopicDto>) this.thirukkuralRepositoryCustom.getThirukkuralTopicNames(firstTopicId,lastTopicId);
     }
 }
 

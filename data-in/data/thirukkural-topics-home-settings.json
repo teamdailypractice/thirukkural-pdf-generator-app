@@ -1,0 +1,8 @@
+{
+  "description": "திருக்குறள் மட்டும் 1080 வரை Tamil",
+  "title": "108 அதிகாரங்கள் Topics",
+  "firstTopicId": 1,
+  "lastTopicId": 108,
+  "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/thirukkural/topics-home/topics.ftl",
+  "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/topics.html"
+}

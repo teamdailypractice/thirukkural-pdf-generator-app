@@ -1,6 +1,7 @@
 package info.dailypractice.dao;
 
 import info.dailypractice.dto.ThirukkuralLabelDto;
+import info.dailypractice.dto.ThirukkuralTopicDto;
 import info.dailypractice.entity.Thirukkural;
 import info.dailypractice.entity.ThirukkuralAgaraMudhali;
 import jakarta.persistence.EntityManager;
@@ -142,6 +143,25 @@ public class ThirukkuralRepositoryCustom {
 
         Query query = entityManager.createNativeQuery(sql, ThirukkuralAgaraMudhali.class);
         List<ThirukkuralAgaraMudhali> resultList = (List<ThirukkuralAgaraMudhali>) query.getResultList();
+        return resultList;
+    }
+
+    public List<ThirukkuralTopicDto> getThirukkuralTopicNames(int firstTopicId, int lastTopicId) {
+
+        String sql = """
+                SELECT
+                  group_id
+                , name_ta
+                , name_en
+                FROM thirukkural_label a
+                WHERE a.group_id >= %d
+                AND a.group_id <= %d
+                AND a.is_primary = 1
+                ORDER BY a.group_id
+                """.formatted(firstTopicId, lastTopicId);
+
+        Query query = entityManager.createNativeQuery(sql, ThirukkuralTopicDto.class);
+        List<ThirukkuralTopicDto> resultList = (List<ThirukkuralTopicDto>) query.getResultList();
         return resultList;
     }
 
