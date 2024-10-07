@@ -47,5 +47,9 @@ public class ThirukkuralService {
     public List<ThirukkuralTopicDto> getThirukkuralTopicNames(int firstTopicId, int lastTopicId) {
         return (List<ThirukkuralTopicDto>) this.thirukkuralRepositoryCustom.getThirukkuralTopicNames(firstTopicId,lastTopicId);
     }
+
+    public List<ThirukkuralAgaraMudhali> getThirukkuralDetails(int firstKuralId, int lastKuralId, Integer[] kuralIds){
+        return (List<ThirukkuralAgaraMudhali>) this.thirukkuralRepositoryCustom.getThirukkuralDetails(firstKuralId,lastKuralId,kuralIds);
+    }
 }
 

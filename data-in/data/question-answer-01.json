@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Effort",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "அ",
+        "answerKuralIds": [144, 155]
+      },
+      {
+        "question": "அ",
+        "answerKuralIds": [144, 155]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa-01.ftl",
+    "outputFilename":"qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa-01"
+  },
+  {
+    "title": "Fear",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "xxxxxx",
+        "answerKuralIds": [393,282]
+      },
+      {
+        "question": "yyyyy",
+        "answerKuralIds": [333, 334]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa-01.ftl",
+    "outputFilename":"qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+  }
+]
+
