@@ -6,7 +6,7 @@
     "lastKuralId": 1080,
     "questionAnswerKuralList": [
       {
-        "question": "கேட்பது/பார்ப்பது/படிப்பது எல்லாம் உண்மையா? எது உண்மை?",
+        "question": "கேட்பது/பார்ப்பது/படிப்பது? எது உண்மை? ஆராய்தல்? ஏன்?",
         "answerKuralIds": [
           423,
           355
@@ -22,6 +22,35 @@
         "question": "ஏன் தினமும் கற்க வேண்டும்?",
         "answerKuralIds": [
           396
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "நினைத்ததை அடைவது எப்படி?",
+    "category": "focus action effort practice",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "வேண்டுவதை அடிக்கடி நினைத்தால்?",
+        "answerKuralIds": [
+          540
+        ]
+      },
+      {
+        "question": "வேண்டுவதற்காக முயற்சி செய்தால்?",
+        "answerKuralIds": [
+          619
+        ]
+      },
+      {
+        "question": "எண்ணியபடியே செயல் ஆற்றுவதில் உறுதி ஆக இருந்தால்?",
+        "answerKuralIds": [
+          666
         ]
       }
     ],
@@ -62,7 +91,7 @@
   },
   {
     "title": "தூய்மை?",
-    "category": "clean good truth",
+    "category": "clean good truth health wealth",
     "firstKuralId": 1,
     "lastKuralId": 1080,
     "questionAnswerKuralList": [
@@ -94,7 +123,7 @@
   },
   {
     "title": "எது எனக்கு நல்லது? ஏன்?",
-    "category": "habit health",
+    "category": "habit health patience good wealth",
     "firstKuralId": 1,
     "lastKuralId": 1080,
     "questionAnswerKuralList": [
@@ -127,8 +156,8 @@
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
   },
   {
-    "title": "என் உடலுக்கு எது நல்லது?",
-    "category": "health",
+    "title": "சாப்பிடுதல்? எதை? ஏன்? அளவு?",
+    "category": "health tongue stomach",
     "firstKuralId": 1,
     "lastKuralId": 1080,
     "questionAnswerKuralList": [
@@ -156,6 +185,174 @@
         "answerKuralIds": [
           947,
           946
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "பேசுதல்? எப்படி? ஏன்?",
+    "category": "talk ask words speak tongue",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "எதை காக்க-வேண்டும்? ஏன்?",
+        "answerKuralIds": [
+          127
+        ]
+      },
+      {
+        "question": "எது ஆறும்? எது ஆறாது? ஏன்?",
+        "answerKuralIds": [
+          129
+        ]
+      },
+      {
+        "question": "எதை சொல்ல வேண்டும்? எதை சொல்ல கூடாது? ஏன்?",
+        "answerKuralIds": [
+          200,
+          100,
+          96,
+          94
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "பிறர்க்குத் துன்பம் செய்யக்கூடாது? ஏன்?",
+    "category": "talk ask words speak tongue",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "இன்று நான் பிறருக்கு துன்பம் செய்தால், நாளை?",
+        "answerKuralIds": [
+          319
+        ]
+      },
+      {
+        "question": "எது கிடைத்தாலும் எதை செய்யக்கூடாது??",
+        "answerKuralIds": [
+          311
+        ]
+      },
+      {
+        "question": "பிறர், எனக்குத் துன்பம் செய்தாலும்?",
+        "answerKuralIds": [
+          313
+        ]
+      },
+      {
+        "question": "துன்பம் வேண்டாம் எனில்?",
+        "answerKuralIds": [
+          320
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "வரவுக்குள் செலவு? ஏன்?",
+    "category": "income expense life",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "துன்பம் இல்லை? எப்பொழுது?",
+        "answerKuralIds": [
+          478
+        ]
+      },
+      {
+        "question": "எவ்வளவு கொடுக்க வேண்டும்?",
+        "answerKuralIds": [
+          477
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "செலவு அதிகம் ஆனால்?",
+    "category": "income expense life",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "அளவு-அறிந்து வாழாதான், வாழ்க்கை?",
+        "answerKuralIds": [
+          479
+        ]
+      },
+      {
+        "question": "பொருள் உள்ள அளவை ஆராயாமல், கொடுத்தால்?",
+        "answerKuralIds": [
+          480
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "தீ நெருப்பு?",
+    "category": "analogy fire",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "தீ நெருப்பு - ஆராய்ந்து தெளிக!",
+        "answerKuralIds": [
+          129,
+          202,
+          308,
+          674,
+          691,
+          896,
+          947,
+          1049,
+          267
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "யானை புலி பசு முதலை பறவை சிங்கம் முயல் மயில் நரி?",
+    "category": "analogy elephant tiger cow crocodile bird lion fox",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "ஆராய்ந்து தெளிக!",
+        "answerKuralIds": [
+          475,
+          500,
+          578,
+          758,
+          773,
+          597,
+          599,
+          273,
+          495,
+          274,
+          338,
+          381,
+          59,
+          774
         ]
       }
     ],

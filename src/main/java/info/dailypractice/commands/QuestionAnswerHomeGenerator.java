@@ -46,9 +46,9 @@ public class QuestionAnswerHomeGenerator {
             QuestionAnswerKuralConfiguration questionAnswerKuralConfiguration = questionAnswerKuralConfigurationList.get(i);
             HyperlinksWithDescription hyperlinksWithDescription = new HyperlinksWithDescription();
 
+//            The htmls files are present in the same directory. so href can be only the filename
             String fileNumber = String.format("%03d", (i + 1));
-            String url = Paths.get(questionAnswerKuralConfiguration.getOutputFileAbsolutePath(),
-                         questionAnswerKuralConfiguration.getOutputFilename() + fileNumber + ".html").toString();
+            String url = questionAnswerKuralConfiguration.getOutputFilename() + fileNumber + ".html";
             hyperlinksWithDescription.setUrl(url);
             hyperlinksWithDescription.setText(questionAnswerKuralConfiguration.getTitle());
             hyperlinksWithDescription.setDescription(questionAnswerKuralConfiguration.getCategory());
