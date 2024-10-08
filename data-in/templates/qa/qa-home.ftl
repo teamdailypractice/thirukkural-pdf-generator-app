@@ -19,20 +19,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', 'Open Sans', sans-serif;
-            font-size: 18px;
-            line-height: 1.6;
-            margin: 0;
-            min-height: 100vh;
-        }
-        table.dataTable tbody td {
-            white-space: normal;  /* Enable text wrapping */
-        }
-    </style>
+    <link rel="stylesheet" href="styles/agaramudhali.css">
 
-    <title>${bcp.getTitle()}</title>
+    <title>${hyperlinks.getTitle()}</title>
 </head>
 
 <body>
@@ -50,11 +39,10 @@
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">Thirukkural</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="index.html">தேடுக Search</a></li>
+                            <li><a class="dropdown-item" href="../index.html">தேடுக Search</a></li>
                             <li><a class="dropdown-item" href="topics.html">அதிகாரங்கள் Topics</a></li>
-                            <li><a class="dropdown-item" href="qa/index.html">கேள்வி? பதில்! QA</a></li>
-                            <li><a class="dropdown-item" href="am/index.html">அ..ஆ..க..கா</a></li>
-                            <li><a class="dropdown-item  active" href="#">Books Download</a></li>
+                            <li><a class="dropdown-item active" href="#">அ..ஆ..க..கா</a></li>
+                            <li><a class="dropdown-item" href="../books.html">Books Download</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -73,11 +61,11 @@
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">DailyPractice</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../addition.html">Addition</a></li>
-                            <li><a class="dropdown-item" href="../subtraction.html">Subtraction</a></li>
-                            <li><a class="dropdown-item" href="../mul-table-s1.html">Multiplication Table</a></li>
-                            <li><a class="dropdown-item" href="../division.html">Division</a></li>
-                            <li><a class="dropdown-item" href="../index.html">Home</a></li>
+                            <li><a class="dropdown-item" href="../../addition.html">Addition</a></li>
+                            <li><a class="dropdown-item" href="../../subtraction.html">Subtraction</a></li>
+                            <li><a class="dropdown-item" href="../../mul-table-s1.html">Multiplication Table</a></li>
+                            <li><a class="dropdown-item" href="../../division.html">Division</a></li>
+                            <li><a class="dropdown-item" href="../../index.html">Home</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -86,20 +74,20 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 align="center">${bcp.getTitle()}</h2>
+        <h2 align="center">${hyperlinks.getTitle()}</h2>
         <table id="example" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>Author</th>
-                    <th>Description</th>
+                    <th>${hyperlinks.getTitle()}</th>
+                    <th>திருக்குறள் எண்ணிக்கை</th>
                 </tr>
             </thead>
             <tbody>
-                <#assign bookConfigurationList=bcp.getBookConfigurationList()>
-                    <#list bookConfigurationList as bookConfiguration>
+                <#assign hyperlinkItemsList=hyperlinks.getHyperlinksWithDescription()>
+                    <#list hyperlinkItemsList as hyperlinkItem>
                         <tr>
-                            <td><a href="downloads/${bookConfiguration.getBookName()}.pdf">${bookConfiguration.getAuthor()}</a></td>
-                            <td><a href="downloads/${bookConfiguration.getBookName()}.pdf">${bookConfiguration.getDescription()}</a></td>
+                            <td><a href="${hyperlinkItem.getUrl()}" target="_blank">${hyperlinkItem.getText()}</a></td>
+                            <td>${hyperlinkItem.getCount()}</td>
                         </tr>
                     </#list>
             </tbody>
@@ -119,14 +107,9 @@
 
     <!-- Initialize DataTable -->
     <script>
-        //"ordering": false //disables sorting completely
-        //"order": []  // Disable default sorting on page load
-        // { "orderable": false, "targets": [0, 2] }  // Disable sorting for columns 0 and 2 (Name and Office)
         $(document).ready(function () {
             $('#example').DataTable({
-                "paging": false,
-                "order": []
-
+                "paging": false  // Disable pagination
             });
         });
     </script>

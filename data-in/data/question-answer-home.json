@@ -1,0 +1,18 @@
+{
+  "title": "அகர வரிசை - 1080 வரை",
+  ""
+  "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa-home.ftl",
+  "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa/index.html",
+  "hyperlinksWithDescription": [
+    {
+      "text": "அ",
+      "url": "qa-001.html",
+      "category": "Life"
+    },
+    {
+      "text": "ஆ",
+      "url": "qa-002.html",
+      "category": "Analogy"
+    }
+  ]
+}

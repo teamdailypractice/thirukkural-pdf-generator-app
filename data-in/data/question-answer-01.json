@@ -9,13 +9,13 @@
         "answerKuralIds": [144, 155]
       },
       {
-        "question": "அ",
+        "question": "aaaa",
         "answerKuralIds": [144, 155]
       }
     ],
-    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa-01.ftl",
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
     "outputFilename":"qa-",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa-01"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
   },
   {
     "title": "Fear",
@@ -31,9 +31,9 @@
         "answerKuralIds": [333, 334]
       }
     ],
-    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa-01.ftl",
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
     "outputFilename":"qa-",
-    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out"
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
   }
 ]
 
