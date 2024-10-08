@@ -123,7 +123,7 @@
   },
   {
     "title": "எது எனக்கு நல்லது? ஏன்?",
-    "category": "habit health patience good wealth",
+    "category": "habit health patience good wealth focus",
     "firstKuralId": 1,
     "lastKuralId": 1080,
     "questionAnswerKuralList": [
@@ -252,6 +252,52 @@
         "question": "துன்பம் வேண்டாம் எனில்?",
         "answerKuralIds": [
           320
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "பிற உயிர்களின் பசியை ஆற்றுதல்?",
+    "category": "hunger",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "யாரை பசி தீண்டாது/அணுகாது? யாருக்கு பசிக்கு உணவு கிடைக்கும்?",
+        "answerKuralIds": [
+          227
+        ]
+      },
+      {
+        "question": "பசியை போக்குபவரின் வலிமை?",
+        "answerKuralIds": [
+          225
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "எது துன்பமானது?",
+    "category": "poverty",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "வறுமையைப் போல் துன்பமானது எது?",
+        "answerKuralIds": [
+          1041
+        ]
+      },
+      {
+        "question": "பசியோடு தூங்க முடியுமா?",
+        "answerKuralIds": [
+          1049
         ]
       }
     ],
