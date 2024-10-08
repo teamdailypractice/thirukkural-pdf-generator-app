@@ -1,13 +1,13 @@
 package info.dailypractice.entity;
 
 // Class for individual hyperlink
-public class HyperlinkWithDescription extends Hyperlink{
+public class HyperlinkWithCount extends Hyperlink{
     private int count;
 
-    public HyperlinkWithDescription() {
+    public HyperlinkWithCount() {
     }
 
-    public HyperlinkWithDescription(String text, String url, int count) {
+    public HyperlinkWithCount(String text, String url, int count) {
         super(text, url);
         this.count = count;
     }
@@ -29,5 +29,4 @@ public class HyperlinkWithDescription extends Hyperlink{
     }
 }
 
-// Class to hold the list of hyperlinks
 

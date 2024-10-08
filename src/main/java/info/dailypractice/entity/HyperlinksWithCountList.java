@@ -2,9 +2,9 @@ package info.dailypractice.entity;
 
 import java.util.List;
 
-public class HyperlinksWithDescriptionList {
+public class HyperlinksWithCountList {
     private String title;
-    private List<HyperlinksWithDescription> hyperlinksWithDescription;
+    private List<HyperlinkWithCount> hyperlinksWithCount;
     private String templateFileAbsolutePath;
     private String outputFileAbsolutePath;
 
@@ -16,12 +16,13 @@ public class HyperlinksWithDescriptionList {
         this.title = title;
     }
 
-    public List<HyperlinksWithDescription> getHyperlinksWithDescription() {
-        return hyperlinksWithDescription;
+    // Getters and Setters
+    public List<HyperlinkWithCount> getHyperlinksWithCount() {
+        return hyperlinksWithCount;
     }
 
-    public void setHyperlinksWithDescription(List<HyperlinksWithDescription> hyperlinksWithDescription) {
-        this.hyperlinksWithDescription = hyperlinksWithDescription;
+    public void setHyperlinksWithCount(List<HyperlinkWithCount> hyperlinksWithCount) {
+        this.hyperlinksWithCount = hyperlinksWithCount;
     }
 
     public String getTemplateFileAbsolutePath() {
@@ -44,7 +45,7 @@ public class HyperlinksWithDescriptionList {
     public String toString() {
         return "HyperlinksWithDescriptionList{" +
                "title='" + title + '\'' +
-               ", hyperlinksWithDescription=" + hyperlinksWithDescription +
+               ", hyperlinks=" + hyperlinksWithCount +
                ", templateFileAbsolutePath='" + templateFileAbsolutePath + '\'' +
                ", outputFileAbsolutePath='" + outputFileAbsolutePath + '\'' +
                '}';

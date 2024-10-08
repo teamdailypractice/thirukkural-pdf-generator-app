@@ -1,0 +1,5 @@
+{
+  "title": "QA கேள்வி பதில்?",
+  "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa-home.ftl",
+  "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa/index.html"
+}

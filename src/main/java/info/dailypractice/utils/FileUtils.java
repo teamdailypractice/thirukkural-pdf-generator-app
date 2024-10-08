@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class FileUtils {
 
@@ -26,5 +27,24 @@ public class FileUtils {
             throw new IOException("Path: " + path + " is not absolute.");
         }
 
+    }
+
+    public static void copyDirectory(Path sourceDirectory, Path targetDirectory) throws IOException {
+        // Walk through the file tree of the source directory
+        Files.walk(sourceDirectory)
+                .forEach(source -> {
+                    Path target = targetDirectory.resolve(sourceDirectory.relativize(source));
+                    try {
+                        // If the source is a directory, create the directory in the target location
+                        if (Files.isDirectory(source)) {
+                            Files.createDirectories(target);
+                        } else {
+                            // Copy the file from source to target, replacing any existing file
+                            Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+                        }
+                    } catch (IOException e) {
+                        System.err.println("Error copying: " + source + " to " + target + ". " + e);
+                    }
+                });
     }
 }

@@ -6,10 +6,7 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateExceptionHandler;
 import info.dailypractice.entity.BookConfiguration;
-import info.dailypractice.entity.HyperlinksList;
-import info.dailypractice.entity.HyperlinksWithDescriptionList;
 import info.dailypractice.pdf.Book;
-import info.dailypractice.pdf.BookPage;
 import info.dailypractice.service.BookConfigurationProvider;
 import info.dailypractice.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @ShellComponent
