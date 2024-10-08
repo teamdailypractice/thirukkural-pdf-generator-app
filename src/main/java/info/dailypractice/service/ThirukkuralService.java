@@ -9,7 +9,9 @@ import info.dailypractice.entity.ThirukkuralAgaraMudhali;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ThirukkuralService {
@@ -49,7 +51,20 @@ public class ThirukkuralService {
     }
 
     public List<ThirukkuralAgaraMudhali> getThirukkuralDetails(int firstKuralId, int lastKuralId, Integer[] kuralIds){
-        return (List<ThirukkuralAgaraMudhali>) this.thirukkuralRepositoryCustom.getThirukkuralDetails(firstKuralId,lastKuralId,kuralIds);
+//        It needs to be in the same order.
+        //It could not be ordered in the SQL
+        //Easy is to order here and then return the result
+        ArrayList<ThirukkuralAgaraMudhali> orderedItems = new ArrayList<>();
+        List<ThirukkuralAgaraMudhali> thirukkuralDetails = this.thirukkuralRepositoryCustom.getThirukkuralDetails(firstKuralId, lastKuralId, kuralIds);
+        for (int i = 0; i < kuralIds.length; i++) {
+            int kuralIdToBeSearched = kuralIds[i];
+            Optional<ThirukkuralAgaraMudhali> optionalThirukkuralAgaraMudhali = thirukkuralDetails
+                    .stream()
+                    .filter(item -> item.getKural_id() == kuralIdToBeSearched)
+                    .findFirst();
+            optionalThirukkuralAgaraMudhali.ifPresent(orderedItems::add);
+        }
+        return orderedItems;
     }
 }
 

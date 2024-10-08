@@ -69,7 +69,7 @@ sdk use java 21.0.3-oracle
 * Thirukkural Topics listing - `generate-thirukkural-topics-home-page D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/thirukkural-topics-home-settings.json`
 * Thirukkural Pdf files generation - `generate-book-type-setting D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/book-settings.json`
 * Thirukkural Question Answer generation - `generate-thirukkural-question-answer D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/question-answer-01.json`
-* Thirukkural Question Answer generation - `generate-thirukkural-question-answer-home D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/question-answer-home.json D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/question-answer-01.json`
+* Thirukkural Question Answer Home Page generation - `generate-thirukkural-question-answer-home D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/question-answer-home.json D:/git/spring-boot-learning/data-jpa-sqlite/data-in/data/question-answer-01.json`
 
 ## How to get typst executable - only needed for pdf generation?
 

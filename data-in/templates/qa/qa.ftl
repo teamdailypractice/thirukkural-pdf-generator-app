@@ -74,7 +74,10 @@
       <span class="tamil-content">உரை: மு. வரதராசனார்</span><br />
       <span class="english-content">Translation: Kavi Yogi Shudhdhanandha Bharati</span>
     </div>
-
+    <br/>
+    <div align="center">
+      <span class="tamil-content-kural">${qac.getTitle()}</span>
+    </div>
     <!-- Navigation Links -->
     <div class="mt-4 mb-4 d-flex justify-content-between">
       <a href="index.html" class="btn btn-primary">QA Home</a>
@@ -95,33 +98,37 @@
                 <div id="${collapseName}" class="accordion-collapse collapse" aria-labelledby="${headingId}"
                   data-bs-parent="#itemAccordion">
                   <div class="accordion-body">
-                    <!-- List<ThirukkuralAgaraMudhali> items  -->
-                    <#list items as item>
-                      <p>
-                        <span class="tamil-content-kural">${item.getLine1()}</span><br />
-                        <span class="tamil-content-kural">${item.getLine2()}</span><br />
-                        <audio controls src="../../kural/media/${item.getKural_id()}.mp3"></audio>
-                        <br />
-                        <!-- Tamil Explanation -->
-                        <span class="tamil-content">${item.getTamil()}</span>
-                        <br />
-                        <br />
-                        <!-- English Explanation -->
-                        <#assign uraiLines=item.getEnglish()?split("\n")>
-                          <span class="english-content">${uraiLines[0]}
-                            <br />${uraiLines[1]}</span>
-                          <br />
-                          <br />
-                          <!-- Topic title in Tamil and english hyperlink -->
-                          <span>
-                            <a href="../index.html?${item.getKural_id()}"
-                              target="_blank">${item.getKural_id()}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="../index.html?${item.getGroup_id()}a"
-                              target="_blank">${item.getId_title_ta()}</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                          <a href="../index.html?${item.getGroup_id()}a"
-                            target="_blank">${item.getId_title_en()}</a></span>
-                          <br />
-                      </p>
+                    <#list questionThirukkuralDetailsResultMap as key, items>
+                    <#if key == qacItem?index>
+                        <#list items as item>
+                          <p>
+                            <span class="tamil-content-kural">${item.getLine1()}</span><br />
+                            <span class="tamil-content-kural">${item.getLine2()}</span><br />
+                            <audio controls src="../../kural/media/${item.getKural_id()}.mp3"></audio>
+                            <br />
+                            <!-- Tamil Explanation -->
+                            <span class="tamil-content">${item.getTamil()}</span>
+                            <br />
+                            <br />
+                            <!-- English Explanation -->
+                            <#assign uraiLines=item.getEnglish()?split("\n")>
+                              <span class="english-content">${uraiLines[0]}
+                                <br />${uraiLines[1]}</span>
+                              <br />
+                              <br />
+                              <!-- Topic title in Tamil and english hyperlink -->
+                              <span>
+                                <a href="../index.html?${item.getKural_id()}"
+                                  target="_blank">${item.getKural_id()}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="../index.html?${item.getGroup_id()}a"
+                                  target="_blank">${item.getId_title_ta()}</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                              <a href="../index.html?${item.getGroup_id()}a"
+                                target="_blank">${item.getId_title_en()}</a></span>
+                              <br />
+                          </p>
+                        </#list>
+                    </#if>
+
                     </#list>
                   </div>
                 </div>

@@ -22,9 +22,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.MessageFormat;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.IntStream;
 
 @ShellComponent
@@ -36,8 +34,6 @@ public class QuestionAnswerGenerator {
 
     @ShellMethod("generate thirukkural Question Answer")
     public void generateThirukkuralQuestionAnswer(String dataFilepath) throws IOException, RuntimeException, TemplateException {
-
-//      QuestionAnswerKuralConfiguration questionAnswerKuralConfiguration = objectMapper.readValue(new File(dataFilepath), QuestionAnswerKuralConfiguration.class);
         List<QuestionAnswerKuralConfiguration> questionAnswerKuralConfigurationList = objectMapper.readValue(new File(dataFilepath), new TypeReference<>() {
         });
 
@@ -46,7 +42,7 @@ public class QuestionAnswerGenerator {
             try {
                 setOutputFilename(questionAnswerKuralConfiguration, i);
                 doProcess(questionAnswerKuralConfiguration);
-            } catch (FileNotFoundException e) {
+            } catch (IOException | TemplateException e) {
                 throw new RuntimeException(e);
             }
         });
@@ -66,30 +62,29 @@ public class QuestionAnswerGenerator {
         questionAnswerKuralConfiguration.setOutputFilename(filename);
     }
 
-    private void doProcess(QuestionAnswerKuralConfiguration questionAnswerKuralConfiguration) throws FileNotFoundException {
+    private void doProcess(QuestionAnswerKuralConfiguration questionAnswerKuralConfiguration) throws IOException, TemplateException {
         System.out.println("processing: " + questionAnswerKuralConfiguration);
         validateConfiguration(questionAnswerKuralConfiguration);
         List<QuestionAnswerKural> questionAnswerKuralList = questionAnswerKuralConfiguration.getQuestionAnswerKuralList();
 
-        questionAnswerKuralList.forEach(questionAnswerKural -> {
+        LinkedHashMap<Integer, List<ThirukkuralAgaraMudhali>> questionThirukkuralDetailsResultMap = new LinkedHashMap<>();
+
+        IntStream.range(0, questionAnswerKuralConfiguration.getQuestionAnswerKuralList().size()).forEach(i -> {
+            QuestionAnswerKural questionAnswerKural = questionAnswerKuralConfiguration.getQuestionAnswerKuralList().get(i);
             List<ThirukkuralAgaraMudhali> answerThirukkuralDetails = thirukkuralService.getThirukkuralDetails(questionAnswerKuralConfiguration.getFirstKuralId(),
                     questionAnswerKuralConfiguration.getLastKuralId(),
                     questionAnswerKural.getAnswerKuralIds());
-            try {
-                generateHtmlFile(questionAnswerKuralConfiguration, answerThirukkuralDetails);
-            } catch (TemplateException e) {
-                throw new RuntimeException(e);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+            questionThirukkuralDetailsResultMap.put(i, answerThirukkuralDetails);
         });
+
+        generateHtmlFile(questionAnswerKuralConfiguration, questionThirukkuralDetailsResultMap);
     }
 
-    private void generateHtmlFile(QuestionAnswerKuralConfiguration qac, List<ThirukkuralAgaraMudhali> items) throws TemplateException, IOException {
-        processTemplateFile(qac, items);
+    private void generateHtmlFile(QuestionAnswerKuralConfiguration qac, HashMap<Integer, List<ThirukkuralAgaraMudhali>> questionThirukkuralDetailsResultMap) throws TemplateException, IOException {
+        processTemplateFile(qac, questionThirukkuralDetailsResultMap);
     }
 
-    private void processTemplateFile(QuestionAnswerKuralConfiguration qac, List<ThirukkuralAgaraMudhali> items) throws IOException, TemplateException {
+    private void processTemplateFile(QuestionAnswerKuralConfiguration qac, HashMap<Integer, List<ThirukkuralAgaraMudhali>> questionThirukkuralDetailsResultMap) throws IOException, TemplateException {
         Path template = Paths.get(qac.getTemplateFileAbsolutePath());
         String templateFileDirectory = template.getParent().toString();
         String templateFilename = template.getFileName().toString();
@@ -106,17 +101,18 @@ public class QuestionAnswerGenerator {
 
         FileUtils.createDirectory(qac.getOutputFileAbsolutePath());
 
-        try (OutputStream outputStream = new FileOutputStream(Paths.get(qac.getOutputFileAbsolutePath(),qac.getOutputFilename()).toString());
+        try (OutputStream outputStream = new FileOutputStream(Paths.get(qac.getOutputFileAbsolutePath(), qac.getOutputFilename()).toString());
              OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, StandardCharsets.UTF_8)) {
             String information = MessageFormat.format("Processing template for: {0} -  Output File: {1}", qac.getTitle(), qac.getOutputFileAbsolutePath());
             System.out.println(information);
 
-            Map data = new HashMap();
+            Map<String, Object> data = new HashMap<>();
 
-            data.put("qac", qac); //Acts as Top Item - one or more
-            data.put("items", items); //Body item - one more more
+            data.put("qac", qac);
+            data.put("questionThirukkuralDetailsResultMap", questionThirukkuralDetailsResultMap);
 
             temp.process(data, outputStreamWriter);
+
         }
     }
 
