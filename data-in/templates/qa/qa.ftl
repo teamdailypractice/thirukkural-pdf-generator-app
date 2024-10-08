@@ -89,7 +89,7 @@
                 <h2 class="accordion-header" id="${headingId}">
                   <button class="accordion-button tamil-content-header" type="button" data-bs-toggle="collapse"
                     data-bs-target="#${collapseName}" aria-expanded="true" aria-controls="${collapseName}">
-                    ${qac.getTitle()}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${currentItemIndex}
+                    ${qacItem.getQuestion()}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${currentItemIndex}
                   </button>
                 </h2>
                 <div id="${collapseName}" class="accordion-collapse collapse" aria-labelledby="${headingId}"
@@ -98,6 +98,10 @@
                     <!-- List<ThirukkuralAgaraMudhali> items  -->
                     <#list items as item>
                       <p>
+                        <span class="tamil-content-kural">${item.getLine1()}</span><br />
+                        <span class="tamil-content-kural">${item.getLine2()}</span><br />
+                        <audio controls src="../../kural/media/${item.getKural_id()}.mp3"></audio>
+                        <br />
                         <!-- Tamil Explanation -->
                         <span class="tamil-content">${item.getTamil()}</span>
                         <br />
@@ -109,15 +113,14 @@
                           <br />
                           <br />
                           <!-- Topic title in Tamil and english hyperlink -->
-                          <span><a
-                              href="../index.html?${item.getGroup_id()}a">${item.getId_title_ta()}</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
-                          <span><a href="../index.html?${item.getGroup_id()}a">${item.getId_title_en()}</a></span>
+                          <span>
+                            <a href="../index.html?${item.getKural_id()}"
+                              target="_blank">${item.getKural_id()}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="../index.html?${item.getGroup_id()}a"
+                              target="_blank">${item.getId_title_ta()}</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="../index.html?${item.getGroup_id()}a"
+                            target="_blank">${item.getId_title_en()}</a></span>
                           <br />
-                          <br />
-                          <!-- kural number and hyperlink -->
-                          <a
-                            href="../index.html?${item.getKural_id()}">${item.getKural_id()}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                          <audio controls src="../../kural/media/${item.getKural_id()}.mp3"></audio>
                       </p>
                     </#list>
                   </div>

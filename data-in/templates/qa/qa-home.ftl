@@ -19,9 +19,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/agaramudhali.css">
+    <link rel="stylesheet" href="styles/qa.css">
 
-    <title>${hyperlinks.getTitle()}</title>
+    <title>${qahc.getTitle()}</title>
 </head>
 
 <body>
@@ -40,8 +40,9 @@
                             aria-expanded="false">Thirukkural</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../index.html">தேடுக Search</a></li>
-                            <li><a class="dropdown-item" href="topics.html">அதிகாரங்கள் Topics</a></li>
-                            <li><a class="dropdown-item active" href="#">அ..ஆ..க..கா</a></li>
+                            <li><a class="dropdown-item" href="../topics.html">அதிகாரங்கள் Topics</a></li>
+                            <li><a class="dropdown-item active" href="#">QA கேள்வி பதில்?</a></li>
+                            <li><a class="dropdown-item" href="../am/index.html">அ..ஆ..க..கா</a></li>
                             <li><a class="dropdown-item" href="../books.html">Books Download</a></li>
                         </ul>
                     </li>
@@ -74,20 +75,19 @@
     </nav>
 
     <div class="container mt-5">
-        <h2 align="center">${hyperlinks.getTitle()}</h2>
+        <h2 align="center">${qahc.getTitle()}</h2>
         <table id="example" class="table table-striped table-bordered">
             <thead>
                 <tr>
-                    <th>${hyperlinks.getTitle()}</th>
-                    <th>திருக்குறள் எண்ணிக்கை</th>
+                    <th>கேள்வி?</th>
+                    <th>Category</th>
                 </tr>
             </thead>
             <tbody>
-                <#assign hyperlinkItemsList=hyperlinks.getHyperlinksWithDescription()>
-                    <#list hyperlinkItemsList as hyperlinkItem>
+                    <#list hyperlinksWithDescriptionList as hyperlinksWithDescription>
                         <tr>
-                            <td><a href="${hyperlinkItem.getUrl()}" target="_blank">${hyperlinkItem.getText()}</a></td>
-                            <td>${hyperlinkItem.getCount()}</td>
+                            <td><a href="${hyperlinksWithDescription.getUrl()}" target="_blank">${hyperlinksWithDescription.getText()}</a></td>
+                            <td>${hyperlinksWithDescription.getDescription()}</td>
                         </tr>
                     </#list>
             </tbody>
@@ -109,7 +109,8 @@
     <script>
         $(document).ready(function () {
             $('#example').DataTable({
-                "paging": false  // Disable pagination
+                "paging": false,
+                 "order": []
             });
         });
     </script>

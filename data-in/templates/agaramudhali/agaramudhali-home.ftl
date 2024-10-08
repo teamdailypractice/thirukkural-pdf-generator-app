@@ -84,7 +84,7 @@
                 </tr>
             </thead>
             <tbody>
-                <#assign hyperlinkItemsList=hyperlinks.getHyperlinksWithDescription()>
+                <#assign hyperlinkItemsList=hyperlinks.getHyperlinksWithCount()>
                     <#list hyperlinkItemsList as hyperlinkItem>
                         <tr>
                             <td><a href="${hyperlinkItem.getUrl()}" target="_blank">${hyperlinkItem.getText()}</a></td>

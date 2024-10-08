@@ -4,6 +4,7 @@ import java.util.List;
 
 public class QuestionAnswerKuralConfiguration {
     private String title;
+    private String category;
     private int firstKuralId;
     private int lastKuralId;
     private List<QuestionAnswerKural> questionAnswerKuralList;
@@ -17,6 +18,14 @@ public class QuestionAnswerKuralConfiguration {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getFirstKuralId() {
@@ -67,10 +76,12 @@ public class QuestionAnswerKuralConfiguration {
         this.outputFileAbsolutePath = outputFileAbsolutePath;
     }
 
+
     @Override
     public String toString() {
         return "QuestionAnswerKuralConfiguration{" +
                "title='" + title + '\'' +
+               ", category='" + category + '\'' +
                ", firstKuralId=" + firstKuralId +
                ", lastKuralId=" + lastKuralId +
                ", questionAnswerKuralList=" + questionAnswerKuralList +

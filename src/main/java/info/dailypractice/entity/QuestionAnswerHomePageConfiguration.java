@@ -1,6 +1,6 @@
 package info.dailypractice.entity;
 
-public class QuestionAnswerHomeConfiguration {
+public class QuestionAnswerHomePageConfiguration {
     public String title;
     public String templateFileAbsolutePath;
     public String outputFileAbsolutePath;

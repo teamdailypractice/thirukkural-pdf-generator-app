@@ -2,7 +2,7 @@
   "title": "அகர வரிசை - 1080 வரை",
   "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/agaramudhali/agaramudhali-home.ftl",
   "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/am/index.html",
-  "hyperlinksWithDescription": [
+  "hyperlinksWithCount": [
     {
       "text": "அ",
       "url": "am-1.html",

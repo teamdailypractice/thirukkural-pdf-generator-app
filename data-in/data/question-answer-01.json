@@ -1,38 +1,166 @@
 [
   {
-    "title": "Effort",
+    "title": "திருக்குறளை எப்படிப் படிப்பது?",
+    "category": "learn? question? evaluate?",
     "firstKuralId": 1,
     "lastKuralId": 1080,
     "questionAnswerKuralList": [
       {
-        "question": "அ",
-        "answerKuralIds": [144, 155]
+        "question": "கேட்பது/பார்ப்பது/படிப்பது எல்லாம் உண்மையா? எது உண்மை?",
+        "answerKuralIds": [
+          423,
+          355
+        ]
       },
       {
-        "question": "aaaa",
-        "answerKuralIds": [144, 155]
+        "question": "கற்றுக் கொள்வது எப்படி?",
+        "answerKuralIds": [
+          391
+        ]
+      },
+      {
+        "question": "ஏன் தினமும் கற்க வேண்டும்?",
+        "answerKuralIds": [
+          396
+        ]
       }
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
-    "outputFilename":"qa-",
+    "outputFilename": "qa-",
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
   },
   {
-    "title": "Fear",
+    "title": "என்னை எப்படி உயர்த்திக் கொள்வது?",
+    "category": "learn daily effort",
     "firstKuralId": 1,
     "lastKuralId": 1080,
     "questionAnswerKuralList": [
       {
-        "question": "xxxxxx",
-        "answerKuralIds": [393,282]
+        "question": "என் எண்ணமும் உயர்வும் என்னிடம்?",
+        "answerKuralIds": [
+          595,
+          540
+        ]
       },
       {
-        "question": "yyyyy",
-        "answerKuralIds": [333, 334]
+        "question": "முயற்சி எதை ஆக்கும்?",
+        "answerKuralIds": [
+          616,
+          619
+        ]
+      },
+      {
+        "question": "மனம் தளராத முயற்சி, எதைத் தரும்?",
+        "answerKuralIds": [
+          611
+        ]
       }
     ],
     "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
-    "outputFilename":"qa-",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "தூய்மை?",
+    "category": "clean good truth",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "தூய்மை என்றால் என்ன?",
+        "answerKuralIds": [
+          455,
+          540
+        ]
+      },
+      {
+        "question": "உடல் தூய்மை, மனத்தூய்மை எப்படி?",
+        "answerKuralIds": [
+          298
+        ]
+      },
+      {
+        "question": "எவை மனதில் உள்ள அழுக்குகள்?",
+        "answerKuralIds": [
+          35,
+          184,
+          605
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "எது எனக்கு நல்லது? ஏன்?",
+    "category": "habit health",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "பொறுமை? ஏன்?",
+        "answerKuralIds": [
+          151,
+          156
+        ]
+      },
+      {
+        "question": "சோம்பல் தவிர்த்தல்? ஏன்?",
+        "answerKuralIds": [
+          605,
+          602
+        ]
+      },
+      {
+        "question": "கோபம் தவிர்த்தல்? ஏன்?",
+        "answerKuralIds": [
+          305,
+          306,
+          307,
+          308
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
+    "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
+  },
+  {
+    "title": "என் உடலுக்கு எது நல்லது?",
+    "category": "health",
+    "firstKuralId": 1,
+    "lastKuralId": 1080,
+    "questionAnswerKuralList": [
+      {
+        "question": "எப்பொழுது உண்ண வேண்டும்? ஏன்?",
+        "answerKuralIds": [
+          942
+        ]
+      },
+      {
+        "question": "எதை உண்ண வேண்டும்? ஏன்?",
+        "answerKuralIds": [
+          944,
+          945
+        ]
+      },
+      {
+        "question": "எவ்வளவு உண்ண வேண்டும்? ஏன்?",
+        "answerKuralIds": [
+          943
+        ]
+      },
+      {
+        "question": "ஏன் அதிகமாக உண்ணக் கூடாது?",
+        "answerKuralIds": [
+          947,
+          946
+        ]
+      }
+    ],
+    "templateFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-in/templates/qa/qa.ftl",
+    "outputFilename": "qa-",
     "outputFileAbsolutePath": "D:/git/spring-boot-learning/data-jpa-sqlite/data-out/qa"
   }
 ]
