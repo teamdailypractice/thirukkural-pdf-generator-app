@@ -7,6 +7,7 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import info.dailypractice.entity.BookConfiguration;
 import info.dailypractice.entity.PdfFontSettings;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -17,30 +18,34 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
-
+@Component
 public class BookConfigurationProvider {
     private String title;
     private String templateFileAbsolutePath;
     private String outputFileAbsolutePath;
     private PdfFontSettings pdfFontSettings;
     private List<BookConfiguration> bookConfigurationList;
+    private ObjectMapper jacksonObjectMapper;
 
-//    public List<BookConfiguration> getBookConfiguration(String dataFilepath) throws IOException {
-//        List<BookConfiguration> BookConfigurations = new ArrayList<>();
-//
-//        String data = Files.readAllLines(Path.of(dataFilepath), StandardCharsets.UTF_8)
-//                .stream().collect(Collectors.joining("\n"));
-//        try {
-//            List<BookConfiguration> pcs = objectMapper.readValue(data, new TypeReference<List<BookConfiguration>>() {
-//            });
-//            BookConfigurations.addAll(pcs);
-//
-//        } catch (JsonProcessingException e) {
-//            throw new RuntimeException(e);
-//        }
-//        return BookConfigurations;
-//    }
+    public BookConfigurationProvider(@Autowired ObjectMapper jacksonObjectMapper) {
+        this.jacksonObjectMapper = jacksonObjectMapper;
+    }
+
+    public List<BookConfiguration> getBookConfiguration(String dataFilepath) throws IOException {
+        List<BookConfiguration> BookConfigurations = new ArrayList<>();
+
+        String data = Files.readAllLines(Path.of(dataFilepath), StandardCharsets.UTF_8)
+                .stream().collect(Collectors.joining("\n"));
+        try {
+            List<BookConfiguration> pcs = jacksonObjectMapper.readValue(data, new TypeReference<List<BookConfiguration>>() {
+            });
+            BookConfigurations.addAll(pcs);
+
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+        return BookConfigurations;
+    }
 
 
     public String getTitle() {
@@ -86,10 +91,10 @@ public class BookConfigurationProvider {
     @Override
     public String toString() {
         return "BookConfigurationProvider{" +
-               "title='" + title + '\'' +
-               ", templateFileAbsolutePath='" + templateFileAbsolutePath + '\'' +
-               ", outputFileAbsolutePath='" + outputFileAbsolutePath + '\'' +
-               ", bookConfigurationList=" + bookConfigurationList +
-               '}';
+                "title='" + title + '\'' +
+                ", templateFileAbsolutePath='" + templateFileAbsolutePath + '\'' +
+                ", outputFileAbsolutePath='" + outputFileAbsolutePath + '\'' +
+                ", bookConfigurationList=" + bookConfigurationList +
+                '}';
     }
 }

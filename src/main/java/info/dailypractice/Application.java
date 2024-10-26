@@ -18,30 +18,26 @@ import java.util.List;
 public class Application {
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-//    @Autowired
-//    private Book book;
-//    @Autowired
-//    BookConfigurationProvider bookConfigurationProvider;
+    @Autowired
+    private Book book;
+    @Autowired
+    BookConfigurationProvider bookConfigurationProvider;
 
     public static void main(String[] args) {
 
         SpringApplication.run(Application.class);
     }
 
-//    @Bean
-//    public CommandLineRunner demo() {
-//        return (args) -> {
-//            System.out.println("My Application - Book");
-//            List<BookPage> thirukkuralBookPages = book.getBookPages();
-//            System.out.println(thirukkuralBookPages.size());
-////            for (BookPage bookPage : thirukkuralBookPages) {
-////                System.out.println(bookPage.getTitleInTamil());
-////                System.out.println(bookPage.getContents().size());
-////            }
-//            String datafilePath = "D:\\git\\spring-boot-learning\\data-jpa-sqlite\\data-in\\data\\book-settings.json";
-//            List<BookConfiguration> bookConfiguration = bookConfigurationProvider.getBookConfiguration(datafilePath);
-//
-//            System.out.println(bookConfiguration);
-//        };
-//    }
+    @Bean
+    public CommandLineRunner demo() {
+        return (args) -> {
+            System.out.println("My Application - Book");
+            List<BookPage> thirukkuralBookPages = book.getBookPages();
+            System.out.println(thirukkuralBookPages.size());
+            for (BookPage bookPage : thirukkuralBookPages) {
+                System.out.println(bookPage.getTitleInTamil());
+            }
+            String datafilePath = "/Users/mohannarayanaswamy/git/thirukkural-pdf-generator-app/data-in/data/book-settings.json";
+        };
+    }
 }

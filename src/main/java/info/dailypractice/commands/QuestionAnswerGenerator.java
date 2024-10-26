@@ -15,6 +15,7 @@ import info.dailypractice.utils.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
+import org.springframework.shell.standard.ShellOption;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -25,6 +26,11 @@ import java.text.MessageFormat;
 import java.util.*;
 import java.util.stream.IntStream;
 
+/**
+ * generate-thirukkural-question-answer --dataPath /Users/mohannarayanaswamy/git/thirukkural-pdf-generator-app/data-in/data/question-answer-01.json
+ * generate-thirukkural-question-answer /data-in/data/question-answer-01.json
+ * generate-thirukkural-question-answer data/question-answer-01.json
+ */
 @ShellComponent
 public class QuestionAnswerGenerator {
     @Autowired
@@ -32,8 +38,9 @@ public class QuestionAnswerGenerator {
     @Autowired
     private ThirukkuralService thirukkuralService;
 
-    @ShellMethod("generate thirukkural Question Answer")
-    public void generateThirukkuralQuestionAnswer(String dataFilepath) throws IOException, RuntimeException, TemplateException {
+    @ShellMethod("generate-thirukkural-question-answer")
+    public void generateThirukkuralQuestionAnswer(@ShellOption("dataPath") String dataFilepath) throws IOException, RuntimeException, TemplateException {
+        System.out.printf("Input file to process  %1s\n", dataFilepath);
         List<QuestionAnswerKuralConfiguration> questionAnswerKuralConfigurationList = objectMapper.readValue(new File(dataFilepath), new TypeReference<>() {
         });
 
